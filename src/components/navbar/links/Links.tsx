@@ -38,7 +38,7 @@ const Links = () => {
 
   // TEMPORARY
   const session = true;
-
+  const isAdmin = true;
   return (
     <div className={styles.container}>
       <div className={styles.links}>
@@ -47,7 +47,7 @@ const Links = () => {
         ))}
         {session ? (
           <>
-            {session && (
+            {isAdmin && (
               <NavLink link={{ title: "Admin", path: ELinkPath.ADMIN }} />
             )}
 
@@ -57,6 +57,7 @@ const Links = () => {
           <NavLink link={{ title: "Login", path: ELinkPath.LOGIN }} />
         )}
       </div>
+      {/* displays on mobile */}
       <Image
         className={styles.menuButton}
         src="/menu.png"

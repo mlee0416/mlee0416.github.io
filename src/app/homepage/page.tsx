@@ -1,19 +1,7 @@
 "use client";
 import React from "react";
-import {
-  Box,
-  Drawer,
-  Button,
-  List,
-  Divider,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-} from "@mui/material";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
-import Link from "next/link";
+import styles from "./homepage.module.css";
+import Image from "next/image";
 
 const TOP_MENU_LIST = [
   {
@@ -36,48 +24,25 @@ const BOTTOM_MENU_LIST = [
   },
 ];
 export default function Homepage() {
-  const [open, setOpen] = React.useState(false);
-
-  const toggleDrawer = (newOpen: boolean) => () => {
-    setOpen(newOpen);
-  };
-
-  const DrawerList = (
-    <Box
-      sx={{ width: 200, height: "100vh", borderRight: "1px solid #E5E5E5" }}
-      role="presentation"
-      onClick={toggleDrawer(false)}
-    >
-      <List>
-        {TOP_MENU_LIST.map((menuItem) => (
-          <Link href={menuItem.route} key={menuItem.name}>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <InboxIcon />
-                </ListItemIcon>
-                <ListItemText primary={menuItem.name} />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {BOTTOM_MENU_LIST.map((menuItem) => (
-          <Link href={menuItem.route} key={menuItem.name}>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <InboxIcon />
-                </ListItemIcon>
-                <ListItemText primary={menuItem.name} />
-              </ListItemButton>
-            </ListItem>
-          </Link>
-        ))}
-      </List>
-    </Box>
+  return (
+    <div className={styles.container}>
+      <div className={styles.textContainer}>
+        <h1 className={styles.title}>Creative Thoughts Agency.</h1>
+        <p className={styles.description}>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero
+          blanditiis adipisci minima reiciendis a autem assumenda dolore.
+        </p>
+        <div className={styles.buttons}>
+          <button className={styles.button}>Learn More</button>
+          <button className={styles.button}>Contact</button>
+        </div>
+        <div className={styles.brands}>
+          <Image src="/brands.png" alt="" fill className={styles.brandImg} />
+        </div>
+      </div>
+      <div className={styles.imgContainer}>
+        <Image src="/hero.gif" alt="" fill className={styles.heroImg} />
+      </div>
+    </div>
   );
-  return <div>{DrawerList}</div>;
 }
