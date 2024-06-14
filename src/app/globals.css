@@ -16,10 +16,6 @@
   box-sizing: border-box;
 }
 
-div {
-  flex-direction: column;
-}
-
 body {
   background-color: var(--bg);
   color: var(--text);
