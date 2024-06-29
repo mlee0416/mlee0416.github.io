@@ -6,7 +6,7 @@ const Navbar = async () => {
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo}>
-        Logo
+        Logos
       </Link>
       <div>
         <Links />
