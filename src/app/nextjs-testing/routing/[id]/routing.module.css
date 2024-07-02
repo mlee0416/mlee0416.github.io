@@ -1,0 +1,15 @@
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.currentRouteText {
+  font-size: 24px;
+}
+
+.button {
+  margin-left: 8px;
+  border-radius: 7px;
+  background-color: rgb(110, 189, 20);
+  width: 75px;
+}

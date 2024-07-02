@@ -79,3 +79,11 @@ a {
     width: 380px;
   }
 }
+
+.mainContainer {
+  height: 85vh;
+}
+
+.footerContainer {
+  height: 5vh;
+}

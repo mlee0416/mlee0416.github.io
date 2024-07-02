@@ -7,7 +7,7 @@ import NavLink from "./navLink/NavLink";
 
 export enum ELinkPath {
   HOMEPAGE = "/homepage",
-  ABOUT_ME = "/aboutme",
+  NEXT_JS_TESTING = "/nextjs-testing",
   RESUME = "/resume",
   PROJECTS = "/projects",
   ADMIN = "/admin",
@@ -20,8 +20,8 @@ const LINKS = [
     path: ELinkPath.HOMEPAGE,
   },
   {
-    title: "About Me",
-    path: ELinkPath.ABOUT_ME,
+    title: "NextJS Testing",
+    path: ELinkPath.NEXT_JS_TESTING,
   },
   {
     title: "Resume",

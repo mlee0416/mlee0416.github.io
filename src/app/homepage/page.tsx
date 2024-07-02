@@ -2,27 +2,6 @@
 import React from "react";
 import styles from "./homepage.module.css";
 import Image from "next/image";
-
-const TOP_MENU_LIST = [
-  {
-    name: "Resume",
-    route: "/resume",
-  },
-  {
-    name: "Projects",
-    route: "/projects",
-  },
-  {
-    name: "About Me",
-    route: "/aboutme",
-  },
-];
-const BOTTOM_MENU_LIST = [
-  {
-    name: "Sign Out",
-    route: "/signout",
-  },
-];
 export default function Homepage() {
   return (
     <div className={styles.container}>
