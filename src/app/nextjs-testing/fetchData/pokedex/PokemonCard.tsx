@@ -1,16 +1,14 @@
 import React from "react";
 import styles from "./pokemon.module.css";
-import { TPokemonResults } from "./page";
 import Image from "next/image";
 
 interface IPokemonCardProps {
-  data: TPokemonResults;
+  name: string;
 }
-const PokemonCard = ({ data }: IPokemonCardProps) => {
-  const { name } = data;
+const PokemonCard = ({ name }: IPokemonCardProps) => {
   return (
     <div className={styles.pokemonCardContainer}>
-      PokemonCard {name}
+      {name}
       <Image
         alt={name}
         src={`https://img.pokemondb.net/artwork/large/${name}.jpg`}

@@ -4,7 +4,7 @@ import Link from "next/link";
 const getRequestList = [
   {
     title: "Pokemon",
-    route: "fetchData/pokemon",
+    route: "fetchData/pokedex",
   },
 ];
 const FetchDataExamples = () => {
