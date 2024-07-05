@@ -1,4 +1,4 @@
-import { LoginButton } from "@/components/auth/login/LoginButton";
+import { LoginButton } from "@/components/auth/LoginButton";
 import { Button } from "@/components/ui/button";
 
 const App = () => {
