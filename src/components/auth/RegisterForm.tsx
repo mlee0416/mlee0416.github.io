@@ -19,11 +19,16 @@ import { Button } from "../ui/button";
 import FormError from "../forms/FormError";
 import FormSuccess from "../forms/FormSuccess";
 import { register } from "@/app/actions/register";
+import { useRouter } from "next/navigation";
+import { AUTH_ROUTES } from "@/routes";
 
 const RegisterForm = () => {
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
+
+  const route = useRouter();
+
   const form = useForm<z.infer<typeof RegisterSchema>>({
     mode: "onSubmit",
     resolver: zodResolver(RegisterSchema),
@@ -42,6 +47,12 @@ const RegisterForm = () => {
       register(values).then((data) => {
         setError(data.error);
         setSuccess(data.success);
+        if (data.success) {
+          setTimeout(() => {
+            // routes to login page
+            route.push(AUTH_ROUTES[0]);
+          }, 1000);
+        }
       });
     });
   };
@@ -69,7 +80,7 @@ const RegisterForm = () => {
       name: "password",
       placeholder: "",
       title: "Password",
-      type: "password",
+      type: "text",
     },
   ];
   return (

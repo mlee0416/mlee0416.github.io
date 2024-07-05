@@ -19,12 +19,17 @@ import { Button } from "../ui/button";
 import FormError from "../forms/FormError";
 import FormSuccess from "../forms/FormSuccess";
 import { login } from "@/app/actions/login";
-
+import { IoIosEye } from "react-icons/io";
+import { IoIosEyeOff } from "react-icons/io";
 const LoginForm = () => {
+  const [passwordType, setPasswordType] = useState<"password" | "text">(
+    "password"
+  );
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
   const form = useForm<z.infer<typeof LoginSchema>>({
+    mode: "onSubmit",
     resolver: zodResolver(LoginSchema),
     defaultValues: {
       password: "",
@@ -32,13 +37,19 @@ const LoginForm = () => {
     },
   });
 
+  const handleTogglePasswordType = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+    setPasswordType(passwordType === "password" ? "text" : "password");
+  };
   const onSubmit = (values: z.infer<typeof LoginSchema>) => {
     setError("");
     setSuccess("");
     startTransition(() => {
       login(values).then((data) => {
-        setError(data.error);
-        setSuccess(data.success);
+        setError(data?.error);
+        setSuccess(data?.success);
       });
     });
   };
@@ -78,7 +89,23 @@ const LoginForm = () => {
                 <FormItem>
                   <FormLabel>Password</FormLabel>
                   <FormControl>
-                    <Input {...field} type="password" disabled={isPending} />
+                    <div className="flex flex-row space-x-4">
+                      <Input
+                        {...field}
+                        type={passwordType}
+                        disabled={isPending}
+                      />
+                      <Button
+                        onClick={handleTogglePasswordType}
+                        variant="outline"
+                      >
+                        {passwordType === "text" ? (
+                          <IoIosEye />
+                        ) : (
+                          <IoIosEyeOff />
+                        )}
+                      </Button>
+                    </div>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
