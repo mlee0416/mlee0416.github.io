@@ -21,9 +21,7 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
     });
     return { success: "Email Sent" };
   } catch (error) {
-    console.log("error", error);
     if (error instanceof AuthError) {
-      console.log("error.type", error.type);
       switch (error.type) {
         case "CallbackRouteError":
           return { error: "Invalid credentials" };
