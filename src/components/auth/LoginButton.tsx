@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { EMode } from "./types/EMode";
+import { ERoutes } from "@/types/routes/routeTypes";
 
 interface ILoginButtonProps {
   children: React.ReactNode;
@@ -10,7 +11,7 @@ interface ILoginButtonProps {
 export const LoginButton = ({ children, mode, asChild }: ILoginButtonProps) => {
   const router = useRouter();
   const handleClick = () => {
-    router.push("/auth/login");
+    router.push(ERoutes.LOGIN);
   };
 
   if (mode === EMode.MODAL) {

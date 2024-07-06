@@ -21,6 +21,7 @@ import FormSuccess from "../forms/FormSuccess";
 import { register } from "@/app/actions/register";
 import { useRouter } from "next/navigation";
 import { AUTH_ROUTES } from "@/routes";
+import { ERoutes } from "@/types/routes/routeTypes";
 
 const RegisterForm = () => {
   const [error, setError] = useState<string | undefined>("");
@@ -86,7 +87,7 @@ const RegisterForm = () => {
   return (
     <CardWrapper
       headerLabel="Create an account"
-      backButtonHref="/auth/login"
+      backButtonHref={ERoutes.LOGIN}
       backButtonLabel="Already have an account?"
       showSocial
     >

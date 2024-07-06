@@ -19,7 +19,8 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
       password,
       redirectTo: DEFAULT_LOGIN_REDIRECT,
     });
-    return { success: "Email Sent" };
+    // TODO: Add when we add 2FA
+    // return { success: "Email Sent" };
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {

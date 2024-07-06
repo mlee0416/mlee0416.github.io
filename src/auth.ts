@@ -3,6 +3,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import authConfig from "./auth.config";
 import { db } from "@/lib/db";
 import { getUserById } from "./data/user";
+import { ERoutes } from "./types/routes/routeTypes";
 
 export const {
   auth,
@@ -39,6 +40,19 @@ export const {
       return token;
     },
   },
+  events: {
+    linkAccount: async ({ user }) => {
+      await db.user.update({
+        where: { id: user.id },
+        data: {
+          firstName: user.name?.split(" ")[0],
+          lastName: user.name?.split(" ")[1],
+          emailVerified: new Date(),
+        },
+      });
+    },
+  },
+  pages: { signIn: ERoutes.LOGIN, error: ERoutes.AUTH_ERROR },
   adapter: PrismaAdapter(db),
   session: { strategy: "jwt" },
   ...authConfig,

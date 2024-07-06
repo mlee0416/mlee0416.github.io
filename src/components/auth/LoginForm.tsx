@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
-
+import { useSearchParams } from "next/navigation";
 import {
   Form,
   FormControl,
@@ -21,6 +21,7 @@ import FormSuccess from "../forms/FormSuccess";
 import { login } from "@/app/actions/login";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
+import { ERoutes } from "@/types/routes/routeTypes";
 const LoginForm = () => {
   const [passwordType, setPasswordType] = useState<"password" | "text">(
     "password"
@@ -28,6 +29,12 @@ const LoginForm = () => {
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
+
+  const searchParams = useSearchParams();
+  const urlError =
+    searchParams.get("error") === "OAuthAccountNotLinked"
+      ? "Email already in use with different provider"
+      : "";
   const form = useForm<z.infer<typeof LoginSchema>>({
     mode: "onSubmit",
     resolver: zodResolver(LoginSchema),
@@ -40,7 +47,6 @@ const LoginForm = () => {
   const handleTogglePasswordType = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    e.preventDefault();
     setPasswordType(passwordType === "password" ? "text" : "password");
   };
   const onSubmit = (values: z.infer<typeof LoginSchema>) => {
@@ -49,7 +55,8 @@ const LoginForm = () => {
     startTransition(() => {
       login(values).then((data) => {
         setError(data?.error);
-        setSuccess(data?.success);
+        // TODO: Add when adding 2FA
+        // setSuccess(data?.success);
       });
     });
   };
@@ -57,7 +64,7 @@ const LoginForm = () => {
   return (
     <CardWrapper
       headerLabel="Welcom Back"
-      backButtonHref="/auth/register"
+      backButtonHref={ERoutes.REGISTER}
       backButtonLabel="Don't have an account?"
       showSocial
     >
@@ -98,6 +105,7 @@ const LoginForm = () => {
                       <Button
                         onClick={handleTogglePasswordType}
                         variant="outline"
+                        type="button"
                       >
                         {passwordType === "text" ? (
                           <IoIosEye />
@@ -112,7 +120,7 @@ const LoginForm = () => {
               )}
             />
           </div>
-          <FormError message={error} />
+          <FormError message={error || urlError} />
           <FormSuccess message={success} />
           <Button type="submit" className="w-full" disabled={isPending}>
             Login

@@ -1,6 +1,7 @@
 import React from "react";
 import { auth, signOut } from "@/auth";
 import { AUTH_ROUTES } from "@/routes";
+import { ERoutes } from "@/types/routes/routeTypes";
 const SettingsPage = async () => {
   const session = await auth();
   return (
@@ -9,8 +10,7 @@ const SettingsPage = async () => {
       <form
         action={async () => {
           "use server";
-          //   AUTH_ROUTES -> "/auth/login"
-          await signOut({ redirectTo: AUTH_ROUTES[0] });
+          await signOut({ redirectTo: ERoutes.LOGIN });
         }}
       >
         <button type="submit">Sign Out</button>
