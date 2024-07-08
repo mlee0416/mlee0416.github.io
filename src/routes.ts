@@ -5,7 +5,11 @@ import { ERoutes } from "./types/routes/routeTypes";
  * @type {string[]}
  */
 
-export const PUBLIC_ROUTES = [ERoutes.PUBLIC_ROOT, ERoutes.AUTH_ERROR];
+export const PUBLIC_ROUTES = [
+  ERoutes.PUBLIC_ROOT,
+  ERoutes.AUTH_ERROR,
+  ERoutes.AUTH_NEW_VERIFICATION,
+];
 
 /**
  * An array of routes that are used for authentication

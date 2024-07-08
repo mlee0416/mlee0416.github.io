@@ -5,4 +5,5 @@ export enum ERoutes {
   PUBLIC_ROOT = "/",
   AUTH_PREFIX = "/api/auth",
   SETTINGS = "/settings",
+  AUTH_NEW_VERIFICATION = "/auth/new-verification",
 }

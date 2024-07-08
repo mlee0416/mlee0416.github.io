@@ -12,6 +12,21 @@ export const {
   signOut,
 } = NextAuth({
   callbacks: {
+    async signIn({ user, account }) {
+      // Allow OAuth without email verification
+      if (account?.provider !== "credentials") return true;
+
+      const existingUser = await getUserById(user.id);
+      // Prevents user to sign in if email is not verified
+      if (!existingUser?.emailVerified) return false;
+      // TODO: ADD 2FA Check
+
+      // We do not want to check other providers such as
+      // Github or Google because they already have their own
+      // authentication process. We are only checking on manual
+      // users generated.
+      return true;
+    },
     async session({ token, session }) {
       // Add more information from db to token
       if (session.user) {
