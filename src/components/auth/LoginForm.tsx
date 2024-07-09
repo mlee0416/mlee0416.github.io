@@ -22,6 +22,7 @@ import { login } from "@/app/actions/login";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import { ERoutes } from "@/types/routes/routeTypes";
+import Link from "next/link";
 const LoginForm = () => {
   const [passwordType, setPasswordType] = useState<"password" | "text">(
     "password"
@@ -119,6 +120,9 @@ const LoginForm = () => {
               )}
             />
           </div>
+          <Button variant="link" className="font-normal px-0" size="sm" asChild>
+            <Link href={ERoutes.RESET_PASSWORD}>{"Reset password?"}</Link>
+          </Button>
           <FormError message={error || urlError} />
           <FormSuccess message={success} />
           <Button type="submit" className="w-full" disabled={isPending}>

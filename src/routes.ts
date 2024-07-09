@@ -9,6 +9,8 @@ export const PUBLIC_ROUTES = [
   ERoutes.PUBLIC_ROOT,
   ERoutes.AUTH_ERROR,
   ERoutes.AUTH_NEW_VERIFICATION,
+  ERoutes.RESET_PASSWORD,
+  ERoutes.AUTH_NEW_PASSWORD,
 ];
 
 /**
