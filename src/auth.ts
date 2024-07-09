@@ -4,6 +4,7 @@ import authConfig from "./auth.config";
 import { db } from "@/lib/db";
 import { getUserById } from "./data/user";
 import { ERoutes } from "./types/routes/routeTypes";
+import { getTwoFactorConfirmationByUserId } from "./data/two-factor-confirmation";
 
 export const {
   auth,
@@ -19,7 +20,19 @@ export const {
       const existingUser = await getUserById(user.id);
       // Prevents user to sign in if email is not verified
       if (!existingUser?.emailVerified) return false;
-      // TODO: ADD 2FA Check
+      // Check two factor authentication confirmation is set to true.
+      // If not, then it will not allow the user to get into the app.
+      if (existingUser?.isTwoFactorEnabled) {
+        const twoFactorConfirmation = await getTwoFactorConfirmationByUserId(
+          existingUser.id
+        );
+        if (!twoFactorConfirmation) return false;
+
+        // Delete two factor confirmation fo next sign in
+        await db.twoFactorConfirmation.delete({
+          where: { id: twoFactorConfirmation.id },
+        });
+      }
 
       // We do not want to check other providers such as
       // Github or Google because they already have their own
@@ -67,7 +80,10 @@ export const {
       });
     },
   },
-  pages: { signIn: ERoutes.LOGIN, error: ERoutes.AUTH_ERROR },
+  pages: {
+    signIn: ERoutes.LOGIN,
+    error: ERoutes.AUTH_ERROR,
+  },
   adapter: PrismaAdapter(db),
   session: { strategy: "jwt" },
   ...authConfig,
