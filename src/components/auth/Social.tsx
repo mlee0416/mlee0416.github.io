@@ -5,6 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import { Button } from "../ui/button";
 import { signIn } from "next-auth/react";
 import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
+import { useSearchParams } from "next/navigation";
 
 enum ESocial {
   GOOGLE = "google",
@@ -12,9 +13,11 @@ enum ESocial {
 }
 
 const Social = () => {
+  const searchedParams = useSearchParams();
+  const callbackUrl = searchedParams.get("callbackUrl");
   const socialOnClick = (provider: ESocial) => {
     signIn(provider, {
-      callbackUrl: DEFAULT_LOGIN_REDIRECT,
+      callbackUrl: callbackUrl || DEFAULT_LOGIN_REDIRECT,
     });
   };
 

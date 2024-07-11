@@ -1,4 +1,5 @@
 import { LoginButton } from "@/components/auth/LoginButton";
+import { EMode } from "@/components/auth/types/EMode";
 import { Button } from "@/components/ui/button";
 
 const App = () => {
@@ -10,7 +11,7 @@ const App = () => {
         </h1>
         <p className="text-lg text-center">A simple authentication</p>
         <div>
-          <LoginButton>
+          <LoginButton mode={EMode.MODAL}>
             <Button variant="secondary" size="lg">
               Sign In
             </Button>
