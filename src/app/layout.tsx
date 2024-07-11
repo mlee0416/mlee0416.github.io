@@ -1,7 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -9,7 +8,7 @@ export const metadata = {
     default: "Personal App",
     template: "%s | Next.js 14",
   },
-  description: "Next.js starter app description",
+  description: "Personal App",
 };
 
 export default function RootLayout({ children }: any) {
