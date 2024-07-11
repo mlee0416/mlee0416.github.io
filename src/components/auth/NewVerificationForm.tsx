@@ -26,6 +26,7 @@ const NewVerificationForm = () => {
       })
       .catch(() => {
         setError("Something went wrong");
+        setError("");
       });
   }, [token, success, error]);
 
