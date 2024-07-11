@@ -18,7 +18,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import FormError from "../forms/FormError";
 import FormSuccess from "../forms/FormSuccess";
-import { login } from "@/app/actions/login";
+import { login } from "@/actions/login";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import { ERoutes } from "@/types/routes/routeTypes";

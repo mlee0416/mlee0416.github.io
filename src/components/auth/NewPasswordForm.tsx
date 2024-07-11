@@ -19,7 +19,7 @@ import FormError from "../forms/FormError";
 import FormSuccess from "../forms/FormSuccess";
 import { ERoutes } from "@/types/routes/routeTypes";
 import { useRouter, useSearchParams } from "next/navigation";
-import { newPassword } from "@/app/actions/new-password";
+import { newPassword } from "@/actions/new-password";
 const NewPasswordForm = () => {
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");

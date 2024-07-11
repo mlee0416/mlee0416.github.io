@@ -18,7 +18,7 @@ import { Button } from "../ui/button";
 import FormError from "../forms/FormError";
 import FormSuccess from "../forms/FormSuccess";
 import { ERoutes } from "@/types/routes/routeTypes";
-import { resetPassword } from "@/app/actions/reset-password";
+import { resetPassword } from "@/actions/reset-password";
 const ResetForm = () => {
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { logout } from "@/app/actions/logout";
+import { logout } from "@/actions/logout";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
 const SettingsPage = () => {
   const user = useCurrentUser();

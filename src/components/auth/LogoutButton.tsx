@@ -1,5 +1,5 @@
 "use client";
-import { logout } from "@/app/actions/logout";
+import { logout } from "@/actions/logout";
 import React from "react";
 
 interface ILogoutButtonProps {

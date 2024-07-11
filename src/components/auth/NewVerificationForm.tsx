@@ -5,7 +5,7 @@ import { CardWrapper } from "./CardWrapper";
 import { ERoutes } from "@/types/routes/routeTypes";
 import { BeatLoader } from "react-spinners";
 import { useSearchParams } from "next/navigation";
-import { newVerification } from "@/app/actions/new-verification";
+import { newVerification } from "@/actions/new-verification";
 import FormSuccess from "../forms/FormSuccess";
 import FormError from "../forms/FormError";
 const NewVerificationForm = () => {

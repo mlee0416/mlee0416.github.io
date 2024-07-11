@@ -18,7 +18,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import FormError from "../forms/FormError";
 import FormSuccess from "../forms/FormSuccess";
-import { register } from "@/app/actions/register";
+import { register } from "@/actions/register";
 import { useRouter } from "next/navigation";
 import { AUTH_ROUTES } from "@/routes";
 import { ERoutes } from "@/types/routes/routeTypes";
