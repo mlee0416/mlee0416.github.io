@@ -39,11 +39,11 @@ const AdminPage = () => {
         </RoleGate>
         <div className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-md">
           <p className="text-sm font-medium">Admin-only API Route</p>
-          <Button onClick={onApiRouteClick}>Click to test</Button>
+          <Button onClick={onApiRouteClick}>Click to test api</Button>
         </div>
         <div className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-md">
           <p className="text-sm font-medium">Admin-only Server Action</p>
-          <Button onClick={onServerActionClick}>Click to test</Button>
+          <Button onClick={onServerActionClick}>Click to test action</Button>
         </div>
       </CardContent>
     </Card>
