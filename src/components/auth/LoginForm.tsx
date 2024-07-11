@@ -78,7 +78,7 @@ const LoginForm = () => {
 
   return (
     <CardWrapper
-      headerLabel="Welcom Back"
+      headerLabel="Create a secure login to see the different technologies used to create this website"
       backButtonHref={ERoutes.REGISTER}
       backButtonLabel="Don't have an account?"
       showSocial
@@ -116,7 +116,7 @@ const LoginForm = () => {
                       <FormControl>
                         <Input
                           {...field}
-                          placeholder="joe.doe@example.com"
+                          placeholder="john.smith@example.com"
                           type="email"
                           disabled={isPending}
                         />

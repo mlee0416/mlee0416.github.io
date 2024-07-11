@@ -80,3 +80,10 @@ body,
     @apply bg-background text-foreground;
   }
 }
+
+.splashPage {
+  background-image: url("../../public/scene.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
