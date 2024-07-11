@@ -4,9 +4,7 @@ import { getUserByEmail } from "@/data/user";
 import { getVerifcationTokenByToken } from "@/data/verification-token";
 
 export const newVerification = async (token: string) => {
-  console.log("token", token);
   const existingToken = await getVerifcationTokenByToken(token);
-  console.log("existingToken", existingToken);
   if (!existingToken) {
     return { error: "Token does not exist" };
   }
