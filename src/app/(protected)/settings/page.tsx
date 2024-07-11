@@ -64,6 +64,13 @@ const SettingsPage = () => {
         })
         .catch(() => {
           setError("Something went wrong!");
+        })
+        .finally(() => {
+          //Not the best way to update the session, but seems like the
+          //udpate session is currently unstable and does not update
+          setTimeout(() => {
+            location.reload();
+          }, 1000);
         });
     });
   };
