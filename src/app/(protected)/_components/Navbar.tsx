@@ -1,48 +1,36 @@
 "use client";
-import UserButton from "@/components/auth/UserButton";
-import { Button } from "@/components/ui/button";
-import { ERoutes } from "@/types/routes/routeTypes";
+
+import * as React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React from "react";
 
-const Navbar = () => {
-  const pathName = usePathname();
+import {
+  NavigationMenu,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
-  const NAVBAR_MENU_ITEMS = [
-    {
-      name: "Server",
-      pathName: ERoutes.SERVER,
-    },
-    {
-      name: "Client",
-      pathName: ERoutes.CLIENT,
-    },
-    {
-      name: "Admin",
-      pathName: ERoutes.ADMIN,
-    },
-    {
-      name: "Settings",
-      pathName: ERoutes.SETTINGS,
-    },
-  ];
+interface INavbarProps {
+  items: {
+    name: string;
+    pathName: string;
+  }[];
+}
+
+export const Navbar = ({ items }: INavbarProps) => {
   return (
-    <nav className="bg-secondary flex justify-between items-center p-4 rounded-xl md:w-[600px] shadow-sm">
-      <div className="flex gap-x-2">
-        {NAVBAR_MENU_ITEMS.map((item) => (
-          <Button
-            key={item.pathName}
-            asChild
-            variant={pathName === item.pathName ? "default" : "outline"}
-          >
-            <Link href={item.pathName}>{item.name}</Link>
-          </Button>
-        ))}
-      </div>
-      <UserButton />
-    </nav>
+    <div className="gap-x-2 hidden tablet:block ">
+      <NavigationMenu>
+        <NavigationMenuList className="space-x-8">
+          {items.map((item) => (
+            <Link href={item.pathName} legacyBehavior passHref key={item.name}>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                {item.name}
+              </NavigationMenuLink>
+            </Link>
+          ))}
+        </NavigationMenuList>
+      </NavigationMenu>
+    </div>
   );
 };
-
-export default Navbar;

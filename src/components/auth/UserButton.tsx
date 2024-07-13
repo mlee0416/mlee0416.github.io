@@ -28,6 +28,7 @@ const UserAvatar = ({ image }: IUserAvatarProps) => (
 
 const UserButton = () => {
   const user = useCurrentUser();
+  console.log("user", user);
   return (
     <div>
       <DropdownMenu>

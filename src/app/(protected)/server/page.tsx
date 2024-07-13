@@ -5,7 +5,7 @@ import React from "react";
 const Server = async () => {
   const user = await currentUser();
   return (
-    <div className="flex flex-wrap">
+    <div>
       <Userinfo user={user} label="User Information" />
     </div>
   );
