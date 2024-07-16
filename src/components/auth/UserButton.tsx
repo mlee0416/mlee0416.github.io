@@ -10,7 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { FaUser } from "react-icons/fa";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
 import LogoutButton from "./LogoutButton";
-import { DividerHorizontalIcon, ExitIcon } from "@radix-ui/react-icons";
+import { ExitIcon } from "@radix-ui/react-icons";
 import { capitalizeFirstLetter } from "@/functions/capitalizeFirstLetter";
 import { Separator } from "@radix-ui/react-dropdown-menu";
 
@@ -28,7 +28,6 @@ const UserAvatar = ({ image }: IUserAvatarProps) => (
 
 const UserButton = () => {
   const user = useCurrentUser();
-  console.log("user", user);
   return (
     <div>
       <DropdownMenu>
@@ -40,7 +39,7 @@ const UserButton = () => {
             <UserAvatar image={user?.image} />
             <div>
               <p>{user?.name}</p>
-              <p>Role: {capitalizeFirstLetter(user?.role)}</p>
+              {user && <p>Role: {capitalizeFirstLetter(user?.role)}</p>}
             </div>
           </div>
           <Separator className="w-full " />

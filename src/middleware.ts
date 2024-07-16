@@ -29,11 +29,6 @@ export default auth((req) => {
     if (nextUrl.search) {
       callbackUrl += nextUrl.search;
     }
-
-    const encodedCallbackUrl = encodeURIComponent(callbackUrl);
-    return Response.redirect(
-      new URL(`${ERoutes.LOGIN}?callbackUrl=${encodedCallbackUrl}`, nextUrl)
-    );
   }
 
   return;
