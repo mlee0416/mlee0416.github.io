@@ -17,8 +17,8 @@ export const Navigation = () => {
       pathName: ERoutes.SERVER,
     },
     {
-      name: "Client",
-      pathName: ERoutes.CLIENT,
+      name: "API Demo",
+      pathName: ERoutes.API_DEMO,
     },
     {
       name: "Admin",

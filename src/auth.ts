@@ -2,17 +2,17 @@ import NextAuth from "next-auth";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import authConfig from "./auth.config";
 import { db } from "@/lib/db";
-import { getUserById } from "./data/user";
+import { getUserById } from "./data/authentication/user";
 import { ERoutes } from "./types/routes/routeTypes";
-import { getTwoFactorConfirmationByUserId } from "./data/two-factor-confirmation";
-import { getAccountByUserId } from "./data/account";
+import { getTwoFactorConfirmationByUserId } from "./data/authentication/two-factor-confirmation";
+import { getAccountByUserId } from "./data/authentication/account";
 
 export const {
   auth,
   handlers: { GET, POST },
   signIn,
   signOut,
-  unstable_update
+  unstable_update,
 } = NextAuth({
   callbacks: {
     async signIn({ user, account }) {

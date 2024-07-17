@@ -3,7 +3,7 @@ import { RegisterSchema } from "@/schemas";
 import * as z from "zod";
 import bcrypt from "bcrypt";
 import { db } from "../lib/db";
-import { getUserByEmail } from "@/data/user";
+import { getUserByEmail } from "@/data/authentication/user";
 import { generateVerificationToken } from "@/lib/tokens";
 import { sendVerificationEmail } from "@/lib/mail";
 

@@ -4,7 +4,7 @@ import * as z from "zod";
 import { db } from "@/lib/db";
 import { SettingsSchema } from "@/schemas";
 import { currentUser } from "@/lib/auth";
-import { getUserByEmail, getUserById } from "@/data/user";
+import { getUserByEmail, getUserById } from "@/data/authentication/user";
 import { generateVerificationToken } from "@/lib/tokens";
 import { sendVerificationEmail } from "@/lib/mail";
 import bcrypt from "bcryptjs";
