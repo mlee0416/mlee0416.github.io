@@ -1,14 +1,17 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useState } from "react";
 import { BeatLoader } from "react-spinners";
-import { TPokemonResults } from "../page";
-import { PokemonCard } from "../PokemonCard";
+import { PokemonCard } from "../../../../../components/pokemon/PokemonCard";
 import { getPokedexListByPage } from "@/data/pokemon/pokedex-list";
 import Pagination from "@/components/pagination/Pagination";
 import { useSearchParams } from "next/navigation";
+import { TPokemonResults } from "@/types/pokemon/PokemonListTypes";
+import { Input } from "@/components/ui/input";
+import Link from "next/link";
 
 const PokemonList = () => {
+  const [pokemonSearch, setPokemonSearch] = useState<string>("");
   const offset = useSearchParams().get("offset");
   const limit = useSearchParams().get("limit");
   const { data: pokedex, isLoading } = useQuery({
@@ -21,11 +24,18 @@ const PokemonList = () => {
   }
   return (
     <div className=" space-y-8">
+      <Input />
       <div>
-        <ul className=" gap-8  flex flex-wrap items-center ">
-          {pokedex.results.map((pokemon: TPokemonResults) => (
+        <ul className=" gap-8  flex flex-wrap items-center justify-center">
+          {pokedex?.results?.map((pokemon: TPokemonResults) => (
             <li key={pokemon.name}>
-              <PokemonCard data={pokemon} />
+              <Link
+                href={`/apiDemo/pokemon/pokemon?name=${pokemon.name}&id=${
+                  pokemon.url.split("pokemon/")[1]
+                }`}
+              >
+                <PokemonCard data={pokemon} />
+              </Link>
             </li>
           ))}
         </ul>

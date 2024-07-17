@@ -13,6 +13,9 @@ import LogoutButton from "./LogoutButton";
 import { ExitIcon } from "@radix-ui/react-icons";
 import { capitalizeFirstLetter } from "@/functions/capitalizeFirstLetter";
 import { Separator } from "@radix-ui/react-dropdown-menu";
+import { MdOutlineManageAccounts } from "react-icons/md";
+import Link from "next/link";
+import { ERoutes } from "@/types/routes/routeTypes";
 
 interface IUserAvatarProps {
   image: string | null | undefined;
@@ -34,17 +37,23 @@ const UserButton = () => {
         <DropdownMenuTrigger>
           <UserAvatar image={user?.image} />
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="p-3 space-y-2">
-          <div className="flex flex-row space-x-2 items-center">
+        <DropdownMenuContent className="p-3 space-y-2 w-60">
+          <div className="flex flex-row space-x-4 items-center p-2">
             <UserAvatar image={user?.image} />
-            <div>
-              <p>{user?.name}</p>
-              {user && <p>Role: {capitalizeFirstLetter(user?.role)}</p>}
-            </div>
+            <p className="font-semibold">{user?.name}</p>
           </div>
-          <Separator className="w-full " />
+          <Separator className="w-full border-slate-300 border " />
+          <DropdownMenuItem className="cursor-pointer">
+            <Link href={ERoutes.ACCOUNT}>
+              <div className="flex flex-row items-center">
+                <MdOutlineManageAccounts className="mr-2" />
+                <p>Account</p>
+              </div>
+            </Link>
+          </DropdownMenuItem>
+          <Separator className="w-full border-slate-300 border " />
           <LogoutButton>
-            <DropdownMenuItem>
+            <DropdownMenuItem className="mt-2 cursor-pointer">
               <ExitIcon className="mr-2" />
               Logout
             </DropdownMenuItem>

@@ -19,19 +19,21 @@ export default function PaginationComponent({
   previous,
 }: IPaginationProps) {
   return (
-    <Pagination>
-      <PaginationContent>
-        {previous && (
-          <PaginationItem>
-            <PaginationPrevious href={`${previous}`} />
-          </PaginationItem>
-        )}
-        {next && (
-          <PaginationItem>
-            <PaginationNext href={`${next}`} />
-          </PaginationItem>
-        )}
-      </PaginationContent>
-    </Pagination>
+    <div>
+      <Pagination className="text-white ">
+        <PaginationContent className="bg-cyan-800 flex justify-between w-80">
+          {previous && (
+            <PaginationItem>
+              <PaginationPrevious href={`${previous}`} />
+            </PaginationItem>
+          )}
+          {next && (
+            <PaginationItem>
+              <PaginationNext href={`${next}`} />
+            </PaginationItem>
+          )}
+        </PaginationContent>
+      </Pagination>
+    </div>
   );
 }

@@ -24,7 +24,9 @@ export const Navbar = ({ items }: INavbarProps) => {
         <NavigationMenuList className="space-x-8">
           {items.map((item) => (
             <Link href={item.pathName} legacyBehavior passHref key={item.name}>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink
+                className={`${navigationMenuTriggerStyle()} hover:bg-gradient-to-r from-cyan-800 hover:text-white`}
+              >
                 {item.name}
               </NavigationMenuLink>
             </Link>

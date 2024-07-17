@@ -13,10 +13,6 @@ export const Navigation = () => {
 
   const NAVBAR_MENU_ITEMS = [
     {
-      name: "Server",
-      pathName: ERoutes.SERVER,
-    },
-    {
       name: "API Demo",
       pathName: ERoutes.API_DEMO,
     },
