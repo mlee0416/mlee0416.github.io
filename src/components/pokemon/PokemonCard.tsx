@@ -13,11 +13,11 @@ export const PokemonCard = ({ data }: IPokemonCardProps) => {
 
   return (
     <Image
-      className="card hvr-grow"
+      className="card hvr-grow w-auto"
       alt={id}
       src={images.large}
-      width={100}
-      height={100}
+      width={200}
+      height={200}
     />
   );
 };

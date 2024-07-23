@@ -42,9 +42,9 @@ const Pokemon = ({
     mode: "onSubmit",
     resolver: zodResolver(PokemonSearchSchema),
     defaultValues: {
-      q: "" || undefined,
-      page: searchParams?.page || undefined,
-      pageSize: "24" || undefined,
+      q: searchParams?.q.substring(0, searchParams?.q.length - 1) || "",
+      page: searchParams?.page || "",
+      pageSize: "24" || "",
     },
   });
 
@@ -67,7 +67,12 @@ const Pokemon = ({
                     type="text"
                     disabled={isPending}
                     placeholder="example: Pikachu"
-                    defaultValue={searchParams.q || ""}
+                    defaultValue={
+                      searchParams?.q.substring(
+                        0,
+                        searchParams?.q.length - 1
+                      ) || ""
+                    }
                   />
                 </FormControl>
                 <FormMessage />
