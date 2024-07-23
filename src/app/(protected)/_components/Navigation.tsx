@@ -8,7 +8,7 @@ import { Navbar } from "./Navbar";
 export const Navigation = () => {
   const NAVBAR_MENU_ITEMS = [
     {
-      name: "API Demo",
+      name: "Pokemon TCG Demo",
       pathName: ERoutes.API_DEMO,
     },
     {
