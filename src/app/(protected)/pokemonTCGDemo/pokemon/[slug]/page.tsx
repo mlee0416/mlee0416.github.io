@@ -44,12 +44,12 @@ const Pokemon = ({
     defaultValues: {
       q: searchParams?.q.substring(0, searchParams?.q.length - 1) || "",
       page: searchParams?.page || "",
-      pageSize: "24" || "",
+      pageSize: "20" || "",
     },
   });
 
   const onSubmit = (values: z.infer<typeof PokemonSearchSchema>) => {
-    router.push(`cards?q=${values.q}*&page=1&pageSize=24`);
+    router.push(`cards?q=${values.q}*&page=1&pageSize=20`);
   };
 
   return (

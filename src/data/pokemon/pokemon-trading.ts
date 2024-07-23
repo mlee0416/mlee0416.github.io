@@ -11,7 +11,7 @@ export const getPokemonListBySearch = async (name: string, page: string) => {
   const apiKey = process.env.NEXT_PUBLIC_POKEMON_TRADING_API_KEY;
   const url = `${baseUrl}/cards?q=${
     name && `name:${name}`
-  }&page=${page}&pageSize=24`;
+  }&page=${page}&pageSize=20`;
 
   const response = await fetch(url, {
     headers: {

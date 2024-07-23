@@ -19,10 +19,10 @@ export default function PaginationComponent({
 }: IPaginationProps) {
   const { getValues } = useFormContext();
   const searchParam = getValues("q");
-  const isNextActive = 24 * page < totalCount;
-  const isPreviousActive = 24 * (page - 1) !== 0;
-  const previousPage = `cards?q=${searchParam}*&page=${page - 1}&pageSize=24`;
-  const nextPage = `cards?q=${searchParam}*&page=${page + 1}&pageSize=24`;
+  const isNextActive = 20 * page < totalCount;
+  const isPreviousActive = 20 * (page - 1) !== 0;
+  const previousPage = `cards?q=${searchParam}*&page=${page - 1}&pageSize=20`;
+  const nextPage = `cards?q=${searchParam}*&page=${page + 1}&pageSize=20`;
 
   return (
     <div>
