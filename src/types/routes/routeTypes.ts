@@ -9,6 +9,6 @@ export enum ERoutes {
   RESET_PASSWORD = "/auth/reset-password",
   AUTH_NEW_PASSWORD = "/auth/new-password",
   ACCOUNT = "/account",
-  API_DEMO = "/apiDemo/pokedex/pokemon?offset=0&limit=24",
+  API_DEMO = "/apiDemo/pokemon/cards?q=&page=1&pageSize=24",
   ADMIN = "/admin",
 }

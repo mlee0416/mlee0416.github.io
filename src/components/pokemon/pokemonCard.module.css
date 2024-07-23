@@ -1,3 +1,14 @@
 .pokemonCardTitle {
   font-family: "Pokemon Solid", sans-serif;
 }
+
+.hvr-grow {
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.card {
+  position: relative;
+}

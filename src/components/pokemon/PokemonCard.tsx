@@ -9,19 +9,15 @@ interface IPokemonCardProps {
 }
 
 export const PokemonCard = ({ data }: IPokemonCardProps) => {
-  const { name } = data;
+  const { images, id } = data;
 
   return (
-    <Card className="flex flex-col items-center w-30 h-30 tablet:w-60 tablet:h-60 gap-3 p-5 justify-between ">
-      <p className={`text-lg ${styles.pokemonCardTitle}`}>{name}</p>
-      <Image
-        className="mb-10"
-        alt={name}
-        src={`https://img.pokemondb.net/artwork/large/${name}.jpg`}
-        width={200}
-        height={200}
-        style={{ width: "100px", height: "100px" }}
-      />
-    </Card>
+    <Image
+      className="card hvr-grow"
+      alt={id}
+      src={images.large}
+      width={100}
+      height={100}
+    />
   );
 };

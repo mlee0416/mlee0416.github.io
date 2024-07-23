@@ -51,3 +51,9 @@ export const SettingsSchema = z
     },
     { message: "Password is required!", path: ["newPassword"] }
   );
+
+export const PokemonSearchSchema = z.object({
+  q: z.optional(z.string()),
+  page: z.optional(z.string()),
+  pageSize: z.optional(z.string()),
+});

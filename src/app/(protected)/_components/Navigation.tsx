@@ -1,16 +1,11 @@
 "use client";
 import UserButton from "@/components/auth/UserButton";
-// import { Button } from "@/components/ui/button";
 import { ERoutes } from "@/types/routes/routeTypes";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import React from "react";
 import SideNav from "./SideNav";
 import { Navbar } from "./Navbar";
 
 export const Navigation = () => {
-  const pathName = usePathname();
-
   const NAVBAR_MENU_ITEMS = [
     {
       name: "API Demo",

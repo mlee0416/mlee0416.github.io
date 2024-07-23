@@ -11,7 +11,6 @@ import { FaUser } from "react-icons/fa";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
 import LogoutButton from "./LogoutButton";
 import { ExitIcon } from "@radix-ui/react-icons";
-import { capitalizeFirstLetter } from "@/functions/capitalizeFirstLetter";
 import { Separator } from "@radix-ui/react-dropdown-menu";
 import { MdOutlineManageAccounts } from "react-icons/md";
 import Link from "next/link";
@@ -43,14 +42,14 @@ const UserButton = () => {
             <p className="font-semibold">{user?.name}</p>
           </div>
           <Separator className="w-full border-slate-300 border " />
-          <DropdownMenuItem className="cursor-pointer">
-            <Link href={ERoutes.ACCOUNT}>
+          <Link href={ERoutes.ACCOUNT}>
+            <DropdownMenuItem className="cursor-pointer">
               <div className="flex flex-row items-center">
                 <MdOutlineManageAccounts className="mr-2" />
                 <p>Account</p>
               </div>
-            </Link>
-          </DropdownMenuItem>
+            </DropdownMenuItem>
+          </Link>
           <Separator className="w-full border-slate-300 border " />
           <LogoutButton>
             <DropdownMenuItem className="mt-2 cursor-pointer">

@@ -7,31 +7,44 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { useFormContext } from "react-hook-form";
 
 interface IPaginationProps {
-  next: string;
-  previous: string;
-  count: number;
-  numberOfPages: number;
+  totalCount: number;
+  page: number;
 }
 export default function PaginationComponent({
-  next,
-  previous,
+  totalCount,
+  page,
 }: IPaginationProps) {
+  const { getValues } = useFormContext();
+  const searchParam = getValues("q");
+  const isNextActive = 24 * page < totalCount;
+  const isPreviousActive = 24 * (page - 1) !== 0;
+  const previousPage = `cards?q=${searchParam}*&page=${page - 1}&pageSize=24`;
+  const nextPage = `cards?q=${searchParam}*&page=${page + 1}&pageSize=24`;
+
   return (
     <div>
       <Pagination className="text-white ">
-        <PaginationContent className="bg-cyan-800 flex justify-between w-80">
-          {previous && (
-            <PaginationItem>
-              <PaginationPrevious href={`${previous}`} />
-            </PaginationItem>
-          )}
-          {next && (
-            <PaginationItem>
-              <PaginationNext href={`${next}`} />
-            </PaginationItem>
-          )}
+        <PaginationContent>
+          <PaginationItem>
+            <PaginationPrevious
+              href={previousPage}
+              className={
+                isPreviousActive ? undefined : "pointer-events-none opacity-50"
+              }
+            />
+          </PaginationItem>
+
+          <PaginationItem>
+            <PaginationNext
+              href={nextPage}
+              className={
+                isNextActive ? undefined : "pointer-events-none opacity-50"
+              }
+            />
+          </PaginationItem>
         </PaginationContent>
       </Pagination>
     </div>
