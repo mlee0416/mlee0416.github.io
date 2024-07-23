@@ -11,7 +11,10 @@ const AttackDetails = ({ attacks }: IAttacksProps) => {
       Attacks
       <div className="grid gap-3">
         {attacks.map((attack) => (
-          <div className="grid grid-cols-12 items-center justify-items-center gap-3">
+          <div
+            className="grid grid-cols-12 items-center justify-items-center gap-3"
+            key={attack.name}
+          >
             <div className="col-span-10">
               <p className="text-lg font-semibold">{attack.name}</p>
               <p>{attack.text}</p>

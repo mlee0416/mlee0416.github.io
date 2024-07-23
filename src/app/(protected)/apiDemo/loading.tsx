@@ -1,10 +1,16 @@
 import Image from "next/image";
 import React from "react";
-import snorlax from "@/../public/snorlax.gif";
+import gastly from "@/../public/gastly.gif";
 const Loading = () => {
   return (
-    <div>
-      <Image src={snorlax} alt="snorlax" width={500} height={500} />
+    <div className="flex h-screen">
+      <Image
+        src={gastly}
+        alt="gastly"
+        width={500}
+        height={500}
+        className="rounded-full m-auto"
+      />
     </div>
   );
 };
