@@ -2,7 +2,7 @@
 import React from "react";
 
 const PokemonTCGDemo = () => {
-  return <div>PokemonTCGDemo</div>;
+  return <div className="">PokemonTCGDemo</div>;
 };
 
 export default PokemonTCGDemo;

@@ -9,7 +9,7 @@ export enum ERoutes {
   RESET_PASSWORD = "/auth/reset-password",
   AUTH_NEW_PASSWORD = "/auth/new-password",
   ACCOUNT = "/account",
-  API_DEMO = "/pokemonTCGDemo/pokemon/cards?q=&page=1&pageSize=20",
+  API_DEMO = "/pokemonTCGDemo/",
   POKEMON_CARD = "/pokemonTCGDemo/card",
   ADMIN = "/admin",
 }
