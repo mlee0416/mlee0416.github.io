@@ -12,10 +12,8 @@ export default async function ProtectedLayout({
   const session = await auth();
   return (
     <SessionProvider session={session}>
-        <Navigation />
-      <div className="grid gap-8 p-8">
-        {children}
-      </div>
+      <Navigation />
+      <div className="grid gap-8 p-8">{children}</div>
     </SessionProvider>
   );
 }
