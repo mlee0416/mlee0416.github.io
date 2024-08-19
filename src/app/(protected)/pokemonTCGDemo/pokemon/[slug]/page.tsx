@@ -38,6 +38,7 @@ const Pokemon = ({
     queryFn: () => getPokemonListBySearch(searchParams?.q, searchParams?.page),
   });
 
+  console.log("pokemon list", pokemonList);
   const form = useForm<z.infer<typeof PokemonSearchSchema>>({
     mode: "onSubmit",
     resolver: zodResolver(PokemonSearchSchema),

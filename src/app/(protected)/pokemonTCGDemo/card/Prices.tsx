@@ -24,25 +24,25 @@ const Prices = ({ tcgPlayer, cardMarket }: IPricesProps) => {
         <div>
           <p className="text-sm">1ST EDITION HOLOFOIL MARKET</p>
           <p className="text-orange-700 font-semibold">
-            ${tcgPlayer.prices["1stEditionHolofoil"]?.market}
+            ${tcgPlayer.prices["1stEditionHolofoil"]?.market || "-"}
           </p>
         </div>
         <div>
           <p className="text-sm">1ST EDITION HOLOFOIL LOW</p>
           <p className="text-emerald-700 font-semibold">
-            ${tcgPlayer.prices["1stEditionHolofoil"]?.low}
+            ${tcgPlayer.prices["1stEditionHolofoil"]?.low || "-"}
           </p>
         </div>
         <div>
           <p className="text-sm">1ST EDITION HOLOFOIL MID</p>
           <p className="text-blue-700 font-semibold">
-            ${tcgPlayer.prices["1stEditionHolofoil"]?.mid}
+            ${tcgPlayer.prices["1stEditionHolofoil"]?.mid || "-"}
           </p>
         </div>
         <div>
           <p className="text-sm">1ST EDITION HOLOFOIL HIGH</p>
           <p className="text-red-700 font-semibold">
-            ${tcgPlayer.prices["1stEditionHolofoil"]?.high}
+            ${tcgPlayer.prices["1stEditionHolofoil"]?.high || "-"}
           </p>
         </div>
       </div>
@@ -60,25 +60,25 @@ const Prices = ({ tcgPlayer, cardMarket }: IPricesProps) => {
         <div>
           <p className="text-sm">PRICE TREND</p>
           <p className="text-orange-700 font-semibold">
-            ${cardMarket.prices?.trendPrice}
+            ${cardMarket.prices?.trendPrice || "-"}
           </p>
         </div>
         <div>
           <p className="text-sm">1 DAY AVERAGE</p>
           <p className="text-orange-700 font-semibold">
-            ${cardMarket.prices?.avg1}
+            ${cardMarket.prices?.avg1 || "-"}
           </p>
         </div>
         <div>
           <p className="text-sm">7 DAY AVERAGE</p>
           <p className="text-orange-700 font-semibold">
-            ${cardMarket.prices?.avg7}
+            ${cardMarket.prices?.avg7 || "-"}
           </p>
         </div>
         <div>
           <p className="text-sm">30 DAY AVERAGE</p>
           <p className="text-orange-700 font-semibold">
-            ${cardMarket.prices.avg30}
+            ${cardMarket.prices.avg30 || "-"}
           </p>
         </div>
       </div>
