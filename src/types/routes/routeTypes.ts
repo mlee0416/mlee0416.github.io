@@ -12,4 +12,5 @@ export enum ERoutes {
   API_DEMO = "/pokemonTCGDemo/pokemon/cards?q=&page=1&pageSize=20",
   POKEMON_CARD = "/pokemonTCGDemo/card",
   ADMIN = "/admin",
+  DOWNLOAD_RESUME = "resume.pdf",
 }

@@ -43,7 +43,7 @@ const Pokemon = ({
     mode: "onSubmit",
     resolver: zodResolver(PokemonSearchSchema),
     defaultValues: {
-      q: searchParams?.q.substring(0, searchParams?.q.length - 1) || "",
+      q: searchParams?.q?.substring(0, searchParams?.q.length - 1) || "",
       page: searchParams?.page || "",
       pageSize: "20" || "",
     },
