@@ -6,7 +6,12 @@ const SLIDE_COUNT = 10;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 const PokemonTCGDemo = () => {
-  return <Carousel slides={SLIDES} options={OPTIONS} />;
+  return (
+    <>
+      <Carousel slides={SLIDES} options={OPTIONS} />
+      test
+    </>
+  );
 };
 
 export default PokemonTCGDemo;
