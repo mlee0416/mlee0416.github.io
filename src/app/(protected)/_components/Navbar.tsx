@@ -14,6 +14,7 @@ interface INavbarProps {
   items: {
     name: string;
     pathName: string;
+    newPage?: boolean;
   }[];
 }
 
@@ -25,6 +26,7 @@ export const Navbar = ({ items }: INavbarProps) => {
           {items.map((item) => (
             <Link href={item.pathName} legacyBehavior passHref key={item.name}>
               <NavigationMenuLink
+                target={item.newPage ? "_blank" : undefined}
                 className={`${navigationMenuTriggerStyle()} hover:bg-gradient-to-r from-cyan-800 hover:text-white`}
               >
                 {item.name}

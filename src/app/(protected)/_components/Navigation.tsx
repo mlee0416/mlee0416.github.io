@@ -19,6 +19,11 @@ export const Navigation = () => {
       name: "Settings",
       pathName: ERoutes.SETTINGS,
     },
+    {
+      name: "Download Resume",
+      pathName: ERoutes.DOWNLOAD_RESUME,
+      newPage: true,
+    },
   ];
   return (
     <>

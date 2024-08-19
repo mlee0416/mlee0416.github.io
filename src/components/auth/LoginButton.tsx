@@ -3,8 +3,9 @@ import { useRouter } from "next/navigation";
 import { EMode } from "./types/EMode";
 import { ERoutes } from "@/types/routes/routeTypes";
 import { Dialog, DialogTrigger } from "../ui/dialog";
-import { DialogContent } from "@radix-ui/react-dialog";
+import { DialogContent, DialogTitle } from "@radix-ui/react-dialog";
 import LoginForm from "./LoginForm";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 interface ILoginButtonProps {
   children: React.ReactNode;
@@ -20,6 +21,9 @@ export const LoginButton = ({ children, mode, asChild }: ILoginButtonProps) => {
   if (mode === EMode.MODAL) {
     return (
       <Dialog>
+        <VisuallyHidden>
+          <DialogTitle />
+        </VisuallyHidden>
         <DialogTrigger asChild={asChild}>{children}</DialogTrigger>
         <DialogContent className="p-0 w-auto bg-transparent border-none">
           <LoginForm />

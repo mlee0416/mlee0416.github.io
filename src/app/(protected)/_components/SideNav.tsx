@@ -14,6 +14,7 @@ interface ISideNavProps {
   items: {
     name: string;
     pathName: string;
+    newPage?: boolean;
   }[];
 }
 const SideNav = ({ items }: ISideNavProps) => {
@@ -30,20 +31,35 @@ const SideNav = ({ items }: ISideNavProps) => {
         <SheetContent side="left" className="flex justify-between flex-col">
           <SheetHeader>
             <div className="flex flex-col space-y-4 pt-6">
-              {items.map((item) => (
-                <Link
-                  className="w-full h-8"
-                  href={item.pathName}
-                  key={item.name}
-                >
-                  <SheetHeader
-                    className="cursor-pointer h-12 hover:bg-gradient-to-r from-cyan-800 hover:text-white rounded-lg items-center flex justify-center"
-                    onClick={closeSideNav}
-                  >
-                    {item.name}
-                  </SheetHeader>
-                </Link>
-              ))}
+              {items.map((item) => {
+                if (item.newPage) {
+                  return (
+                    <a href={item.pathName} target="_blank" key={item.name}>
+                      <SheetHeader
+                        className="cursor-pointer h-12 hover:bg-gradient-to-r from-cyan-800 hover:text-white rounded-lg items-center flex justify-center"
+                        onClick={closeSideNav}
+                      >
+                        {item.name}
+                      </SheetHeader>
+                    </a>
+                  );
+                } else {
+                  return (
+                    <Link
+                      className="w-full h-8"
+                      href={item.pathName}
+                      key={item.name}
+                    >
+                      <SheetHeader
+                        className="cursor-pointer h-12 hover:bg-gradient-to-r from-cyan-800 hover:text-white rounded-lg items-center flex justify-center"
+                        onClick={closeSideNav}
+                      >
+                        {item.name}
+                      </SheetHeader>
+                    </Link>
+                  );
+                }
+              })}
             </div>
           </SheetHeader>
           <SheetFooter>v{versionInfo.version}</SheetFooter>
