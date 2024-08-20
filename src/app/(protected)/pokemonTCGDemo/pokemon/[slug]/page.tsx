@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Form,
   FormControl,
@@ -21,7 +21,7 @@ import { z } from "zod";
 import PokemonList from "../PokemonList";
 import snorlax from "@/../public/snorlax.gif";
 import Pagination from "@/components/pagination/Pagination";
-
+import { CiSearch } from "react-icons/ci";
 const Pokemon = ({
   searchParams,
 }: {
@@ -38,7 +38,6 @@ const Pokemon = ({
     queryFn: () => getPokemonListBySearch(searchParams?.q, searchParams?.page),
   });
 
-  console.log("pokemon list", pokemonList);
   const form = useForm<z.infer<typeof PokemonSearchSchema>>({
     mode: "onSubmit",
     resolver: zodResolver(PokemonSearchSchema),
@@ -64,16 +63,11 @@ const Pokemon = ({
               <FormItem className="flex flex-row items-center justify-center gap-6">
                 <FormControl>
                   <Input
+                    icon={<CiSearch />}
                     {...field}
                     type="text"
                     disabled={isPending}
-                    placeholder="example: Pikachu"
-                    defaultValue={
-                      searchParams?.q.substring(
-                        0,
-                        searchParams?.q.length - 1
-                      ) || ""
-                    }
+                    placeholder="Search for a card"
                   />
                 </FormControl>
                 <FormMessage />
