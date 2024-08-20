@@ -12,6 +12,10 @@ export const Navigation = () => {
       pathName: ERoutes.API_DEMO,
     },
     {
+      name: "NFL Tools",
+      pathName: ERoutes.NFL_TOOLS,
+    },
+    {
       name: "Admin",
       pathName: ERoutes.ADMIN,
     },
