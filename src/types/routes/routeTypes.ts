@@ -14,4 +14,5 @@ export enum ERoutes {
   ADMIN = "/admin",
   DOWNLOAD_RESUME = "resume.pdf",
   NFL_TOOLS = "/nfl-tools",
+  NFL_TEAMS = "/nfl-tools/nfl-teams",
 }

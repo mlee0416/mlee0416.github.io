@@ -23,6 +23,18 @@ const nextConfig = {
         port: "",
         pathname: "/artwork/large/**",
       },
+      {
+        protocol: "https",
+        hostname: "a.espncdn.com",
+        port: "",
+        pathname: "combiner/i?img=/i/teamlogos/nfl/500/**",
+      },
+      {
+        protocol: "https",
+        hostname: "static.www.nfl.com",
+        port: "",
+        pathname: "image/private/f_auto/league/**",
+      },
     ],
   },
 };
