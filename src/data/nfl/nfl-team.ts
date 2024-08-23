@@ -1,6 +1,10 @@
 import { queryStringBuilder } from "@/functions/queryStringBuilder";
 import { HEADERS } from "./constants/constants";
-import { INFLResponse, INFLTeamList } from "../../types/nfl/NFLTeamTypes";
+import {
+  INFLResponse,
+  INFLTeamList,
+  INFLTeamScheduleResponse,
+} from "../../types/nfl/NFLTeamTypes";
 
 export interface INFLTeamRosterProps {
   teamID?: number;
@@ -18,10 +22,16 @@ export interface INFLTeamListProps {
   teamStats?: boolean;
   teamStatsSeason?: number;
 }
+
+export interface INFLTeamScheduleProps {
+  teamID: string;
+  teamAbv?: string;
+  season?: string;
+}
+
+const BASE_URL = process.env.NEXT_PUBLIC_RAPID_API_HOST;
 export const getNFLTeamRoster = async (rosterParams: INFLTeamRosterProps) => {
-  console.log("test", queryStringBuilder(rosterParams).toString());
-  const baseUrl = process.env.NEXT_PUBLIC_RAPID_API_HOST;
-  const url = `${baseUrl}/getNFLTeamRoster?${queryStringBuilder(
+  const url = `${BASE_URL}/getNFLTeamRoster?${queryStringBuilder(
     rosterParams
   ).toString()}`;
 
@@ -41,8 +51,27 @@ export const getNFLTeamRoster = async (rosterParams: INFLTeamRosterProps) => {
 export const getNFLTeamList = async (
   teamParams: INFLTeamListProps
 ): Promise<INFLResponse> => {
-  const baseUrl = process.env.NEXT_PUBLIC_RAPID_API_HOST;
-  const url = `${baseUrl}/getNFLTeams?${queryStringBuilder(
+  const url = `${BASE_URL}/getNFLTeams?${queryStringBuilder(
+    teamParams
+  ).toString()}`;
+
+  const options = {
+    method: "GET",
+    headers: HEADERS,
+  };
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getNFLTeamSchedule = async (
+  teamParams: INFLTeamScheduleProps
+): Promise<INFLTeamScheduleResponse> => {
+  const url = `${BASE_URL}/getNFLTeamSchedule?${queryStringBuilder(
     teamParams
   ).toString()}`;
 

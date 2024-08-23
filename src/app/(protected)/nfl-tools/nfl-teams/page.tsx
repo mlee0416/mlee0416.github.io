@@ -1,4 +1,5 @@
 "use client";
+import TeamCard from "@/components/nfl/TeamCard";
 import BackButton from "@/components/ui/button/back-button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { getNFLTeamList } from "@/data/nfl/nfl-team";
@@ -16,25 +17,43 @@ const NFLTeams = () => {
       }),
   });
   console.log("nflTeamList", nflTeamList);
+  const nfc = nflTeamList?.body?.filter((team) => team.conferenceAbv === "NFC");
+  const afc = nflTeamList?.body?.filter((team) => team.conferenceAbv === "AFC");
   return (
-    <div className="grid grid-cols-2 mobile:grid-cols-3 tablet:grid-cols-5 gap-4">
+    <div className="grid gap-6">
       <div className="pb-8">
         <BackButton />
       </div>
-      NFLTeams
-      {nflTeamList?.body?.map((team) => (
-        <Card key={team.teamName} className="card hvr-grow">
-          <CardHeader>{team.teamName}</CardHeader>
-          <CardContent>
-            <Image
-              src={team.nflComLogo1}
-              alt={team.teamID}
-              width={200}
-              height={200}
+      <div>
+        <h1 className=" text-3xl pb-6">NFC</h1>
+        <div className="grid grid-cols-2 mobile:grid-cols-3 tablet:grid-cols-4 gap-4">
+          {nfc?.map((team) => (
+            <TeamCard
+              name={team.teamName}
+              logo={team.nflComLogo1}
+              id={team.teamID}
+              wins={team.wins}
+              loss={team.loss}
+              tie={team.tie}
             />
-          </CardContent>
-        </Card>
-      ))}
+          ))}
+        </div>
+      </div>
+      <div>
+        <h1 className=" text-3xl pb-6">AFC</h1>
+        <div className="grid grid-cols-2 mobile:grid-cols-3 tablet:grid-cols-4 gap-4">
+          {afc?.map((team) => (
+            <TeamCard
+              name={team.teamName}
+              logo={team.nflComLogo1}
+              id={team.teamID}
+              wins={team.wins}
+              loss={team.loss}
+              tie={team.tie}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
