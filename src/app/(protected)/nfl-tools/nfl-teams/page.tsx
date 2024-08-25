@@ -29,6 +29,7 @@ const NFLTeams = () => {
         <div className="grid grid-cols-2 mobile:grid-cols-3 tablet:grid-cols-4 gap-4">
           {nfc?.map((team) => (
             <TeamCard
+              key={team.teamID}
               name={team.teamName}
               logo={team.nflComLogo1}
               id={team.teamID}
@@ -44,6 +45,7 @@ const NFLTeams = () => {
         <div className="grid grid-cols-2 mobile:grid-cols-3 tablet:grid-cols-4 gap-4">
           {afc?.map((team) => (
             <TeamCard
+              key={team.teamID}
               name={team.teamName}
               logo={team.nflComLogo1}
               id={team.teamID}
