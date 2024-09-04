@@ -1,5 +1,3 @@
-import { Navigation } from "@/components/ui/navbar/Navigation";
-import { ERoutes } from "@/types/routes/routeTypes";
 import Image from "next/image";
 import coding from "@/../public/coding.jpg";
 import coding_boy from "@/../public/coding_boy.gif";
@@ -11,13 +9,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const App = () => {
-  const NAVBAR_MENU_ITEMS = [
-    {
-      name: "Pokemon TCG Demo",
-      pathName: ERoutes.API_DEMO,
-    },
-  ];
-
   const STACK = [
     "NextJS",
     "TypeScript",
