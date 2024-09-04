@@ -1,14 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/auth/login",
-        permanent: true,
-      },
-    ];
-  },
   images: {
     remotePatterns: [
       {
@@ -40,6 +31,12 @@ const nextConfig = {
         hostname: "res.cloudinary.com",
         port: "",
         pathname: "/nflleague/image/private/f_auto/**",
+      },
+      {
+        protocol: "https",
+        hostname: "t3.ftcdn.net",
+        port: "",
+        pathname: "jpg/03/48/39/74/**",
       },
     ],
   },

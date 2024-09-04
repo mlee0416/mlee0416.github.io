@@ -15,7 +15,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <input
           type={type}
           className={cn(
-            "flex text-sm shadow-sm file:text-sm file:font-medium placeholder:text-muted-foreground  focus:outline-none",
+            "flex text-sm file:text-sm file:font-medium placeholder:text-muted-foreground  focus:outline-none",
             className
           )}
           ref={ref}

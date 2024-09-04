@@ -43,7 +43,7 @@ const UserButton = () => {
           </div>
           <Separator className="w-full border-slate-300 border " />
           <Link href={ERoutes.ACCOUNT}>
-            <DropdownMenuItem className="cursor-pointer">
+            <DropdownMenuItem className="cursor-pointer mt-2">
               <div className="flex flex-row items-center">
                 <MdOutlineManageAccounts className="mr-2" />
                 <p>Account</p>

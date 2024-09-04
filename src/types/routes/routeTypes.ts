@@ -1,5 +1,5 @@
 export enum ERoutes {
-  LOGIN = "/auth/login",
+  LOGIN = "/",
   AUTH_ERROR = "/auth/error",
   REGISTER = "/auth/register",
   PUBLIC_ROOT = "/",
