@@ -31,7 +31,7 @@ const App = () => {
   return (
     <main>
       <div className="flex flex-row top-0 h-20 bg-white items-center justify-between px-10">
-        <p className="font-semibold text-xl">Michael Lee's Portfolio</p>
+        <p className="font-semibold text-xl">Michael Lee&apos;s Portfolio</p>
         <Link href="/auth/login">
           <Button>Sign In</Button>
         </Link>
@@ -73,9 +73,9 @@ const App = () => {
           <Card className="max-w-xl">
             <CardContent>
               <h1 className="text-lg font-semibold">
-                Inside the app, you'll see a basic pokemon card application that
-                allows users to search for pokemon cards and gather information
-                about the selected card.
+                Inside the app, you&apos;ll see a basic pokemon card application
+                that allows users to search for pokemon cards and gather
+                information about the selected card.
               </h1>
             </CardContent>
           </Card>
