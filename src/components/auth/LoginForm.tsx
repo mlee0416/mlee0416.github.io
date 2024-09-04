@@ -78,11 +78,19 @@ const LoginForm = () => {
 
   return (
     <CardWrapper
-      headerLabel="Create a secure login to see the different technologies used to create this website"
+      headerLabel="Create a secure login to see the different technologies used to create this website."
       backButtonHref={ERoutes.REGISTER}
       backButtonLabel="Don't have an account?"
       showSocial
     >
+      <div className="pb-4 space-y-2">
+        <p className="text-sm">
+          * If you do not want to log with an email, you are welcome to log in
+          using the information below.
+        </p>
+        <p className="text-sm font-semibold">email: test@test.com</p>
+        <p className="text-sm font-semibold">password: password</p>
+      </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <div className="space-y-4">

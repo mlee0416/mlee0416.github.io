@@ -27,7 +27,7 @@ export const Navbar = ({ items }: INavbarProps) => {
             <Link href={item.pathName} legacyBehavior passHref key={item.name}>
               <NavigationMenuLink
                 target={item.newPage ? "_blank" : undefined}
-                className={`${navigationMenuTriggerStyle()} hover:bg-gradient-to-r from-cyan-800 hover:text-white`}
+                className={`${navigationMenuTriggerStyle()} hover:bg-gradient-to-b from-green-200 to-green-400 hover:text-white`}
               >
                 {item.name}
               </NavigationMenuLink>
