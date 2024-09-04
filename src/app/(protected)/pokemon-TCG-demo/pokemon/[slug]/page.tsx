@@ -19,7 +19,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import PokemonList from "../PokemonList";
-import snorlax from "@/../public/snorlax.gif";
+import snorlax from "@/../public/static/snorlax.gif";
 import Pagination from "@/components/pagination/Pagination";
 import { CiSearch } from "react-icons/ci";
 const Pokemon = ({

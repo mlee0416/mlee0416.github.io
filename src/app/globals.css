@@ -82,7 +82,7 @@ body,
 }
 
 .splashPage {
-  background-image: url("../../public/scene.png");
+  background-image: url("../../public/static/scene.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

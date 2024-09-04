@@ -1,9 +1,9 @@
 import Image from "next/image";
-import coding from "../../public/coding.jpg";
-import coding_boy from "../../public/coding_boy.gif";
-import pokemon_search from "../../public/pokemon.png";
-import pokemon_fly_card from "../../public/pokemon_fly_card.png";
-import pokemon_charizard_card from "../../public/charizard_card.png";
+import coding from "../../public/static/coding.jpg";
+import coding_boy from "../../public/static/coding_boy.gif";
+import pokemon_search from "../../public/static/pokemon.png";
+import pokemon_fly_card from "../../public/static/pokemon_fly_card.png";
+import pokemon_charizard_card from "../../public/static/charizard_card.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";

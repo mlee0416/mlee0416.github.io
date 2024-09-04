@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import gastly from "@/../public/gastly.gif";
+import gastly from "@/../public/static/gastly.gif";
 const Loading = () => {
   return (
     <div className="flex h-screen">
