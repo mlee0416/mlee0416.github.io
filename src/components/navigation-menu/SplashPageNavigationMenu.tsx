@@ -12,13 +12,13 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import SideNav from "../ui/navbar/SideNav";
 import SplashPageSideNavMenu from "./SplashPageSideNavMenu";
 
 export interface IComponents {
   title: string;
   to: string;
   description: string;
+  disabled: boolean;
 }
 const components: IComponents[] = [
   {
@@ -26,12 +26,21 @@ const components: IComponents[] = [
     to: "login",
     description:
       "Utilizing next-auth, prisma, postgres, resend, and more to create a seamless user login experience",
+    disabled: false,
   },
   {
     title: "Pokemon Trading Card Database",
     to: "pokemon",
     description:
       "Uses TCG apis to get pokemon card data and allow users to purchase cards from their website.",
+    disabled: false,
+  },
+  {
+    title: "NFL Fantasy Football Toolkit",
+    to: "nfl",
+    description:
+      "Powered by Rapid API&apos;s, you can see NFL data to help navigate your way to success during the season.",
+    disabled: true,
   },
 ];
 const sideNav = [
@@ -81,21 +90,24 @@ export function SplashPageNavigationMenu() {
             </Link>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {components.map((component) => (
-                  <Link
-                    key={component.title}
-                    to={component.to}
-                    spy={true}
-                    smooth={true}
-                    offset={50}
-                    duration={500}
-                    className="cursor-pointer"
-                  >
-                    <ListItem title={component.title}>
-                      {component.description}
-                    </ListItem>
-                  </Link>
-                ))}
+                {components.map(
+                  (component) =>
+                    !component.disabled && (
+                      <Link
+                        key={component.title}
+                        to={component.to}
+                        spy={true}
+                        smooth={true}
+                        offset={50}
+                        duration={500}
+                        className="cursor-pointer"
+                      >
+                        <ListItem title={component.title}>
+                          {component.description}
+                        </ListItem>
+                      </Link>
+                    )
+                )}
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
