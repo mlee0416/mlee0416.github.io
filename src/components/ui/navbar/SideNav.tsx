@@ -10,6 +10,8 @@ import React, { useState } from "react";
 import versionInfo from "@/../package.json";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
+import { ERoutes } from "@/types/routes/routeTypes";
+import { TbPokeball } from "react-icons/tb";
 interface ISideNavProps {
   items: {
     name: string;
@@ -30,13 +32,18 @@ const SideNav = ({ items }: ISideNavProps) => {
         </SheetTrigger>
         <SheetContent side="left" className="flex justify-between flex-col">
           <SheetHeader>
-            <div className="flex flex-col space-y-4 pt-6">
+            <div className="flex flex-col space-y-4 pt-6 justify-center">
+              <div className="grid justify-center">
+                <Link href={ERoutes.PUBLIC_ROOT}>
+                  <TbPokeball size={35} />
+                </Link>
+              </div>
               {items.map((item) => {
                 if (item.newPage) {
                   return (
                     <a href={item.pathName} target="_blank" key={item.name}>
                       <SheetHeader
-                        className="cursor-pointer h-12 hover:bg-gradient-to-r from-cyan-800 hover:text-white rounded-lg items-center flex justify-center"
+                        className="cursor-pointer h-12 hover:bg-gradient-to-t from-slate-100 to-emerald-400 hover:text-white rounded-lg items-center flex justify-center"
                         onClick={closeSideNav}
                       >
                         {item.name}
@@ -51,7 +58,7 @@ const SideNav = ({ items }: ISideNavProps) => {
                       key={item.name}
                     >
                       <SheetHeader
-                        className="cursor-pointer h-12 hover:bg-gradient-to-r from-cyan-800 hover:text-white rounded-lg items-center flex justify-center"
+                        className="cursor-pointer h-12 hover:bg-gradient-to-t from-slate-100 to-emerald-400 hover:text-white rounded-lg items-center flex justify-center"
                         onClick={closeSideNav}
                       >
                         {item.name}

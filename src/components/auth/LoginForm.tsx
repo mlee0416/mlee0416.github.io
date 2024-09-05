@@ -23,7 +23,6 @@ import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import { ERoutes } from "@/types/routes/routeTypes";
 import Link from "next/link";
-import { ThreeDots } from "react-loader-spinner";
 const LoginForm = () => {
   const [passwordType, setPasswordType] = useState<"password" | "text">(
     "password"

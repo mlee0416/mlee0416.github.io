@@ -24,7 +24,7 @@ const SplashPageSideNavMenu = ({ items }: ISideNavProps) => {
   const closeSideNav = () => {
     setOpenSideNav(!openSideNav);
   };
-  
+
   return (
     <div className="block tablet:hidden">
       <Sheet open={openSideNav} onOpenChange={closeSideNav}>
@@ -42,7 +42,7 @@ const SplashPageSideNavMenu = ({ items }: ISideNavProps) => {
                     key={item.name}
                   >
                     <SheetHeader
-                      className="cursor-pointer h-12 hover:bg-gradient-to-r from-cyan-800 hover:text-white rounded-lg items-center flex justify-center"
+                      className="cursor-pointer h-12 hover:bg-gradient-to-tr from-slate-200 to-slate-400 hover:text-white rounded-lg items-center flex justify-center"
                       onClick={closeSideNav}
                     >
                       {item.name}
