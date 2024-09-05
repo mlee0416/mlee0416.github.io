@@ -7,9 +7,9 @@ const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
 const PokemonTCGDemo = () => {
   return (
-    <>
+    <div>
       <Carousel slides={SLIDES} options={OPTIONS} />
-    </>
+    </div>
   );
 };
 
