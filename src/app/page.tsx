@@ -24,7 +24,7 @@ const App = () => {
 
   return (
     <main>
-      <div className="flex flex-row top-0 h-20 bg-white items-center justify-between px-10 sticky z-50 ">
+      <div className="flex flex-row top-0 h-20 bg-slate-100 items-center justify-between px-10 sticky z-50 ">
         <SplashPageNavigationMenu />
         <Link href={ERoutes.LOGIN}>
           <Button>Sign In</Button>
@@ -99,7 +99,8 @@ const App = () => {
               This project allows users to log into the application using a
               valid email and github. It allows 2 factor authentication as well
               as email verification after signing up. Once you are inside the
-              app, you can change settings, password, and role.
+              app, you can change settings, password, and role. Some other
+              technologies used are Prisma, Postgres, and Resend.
             </p>
           </div>
         </div>
@@ -113,9 +114,9 @@ const App = () => {
               Pokemon Trading Card Database
             </h1>
             <p>
-              Inside the app, you&apos;ll see a pokemon trading card application
-              that allows users to search for pokemon cards and gather
-              information about the selected card.
+              Using ReactQuery to access TCG's database, you&apos;ll see a
+              pokemon trading card application that allows users to search for
+              pokemon cards and gather information about the selected card.
             </p>
           </div>
           <Link href={ERoutes.LOGIN}>
