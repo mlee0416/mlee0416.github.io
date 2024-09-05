@@ -9,6 +9,8 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { TbPokeball } from "react-icons/tb";
+import { ERoutes } from "@/types/routes/routeTypes";
 
 interface INavbarProps {
   items: {
@@ -23,6 +25,9 @@ export const Navbar = ({ items }: INavbarProps) => {
     <div className="gap-x-2 hidden tablet:block ">
       <NavigationMenu>
         <NavigationMenuList className="space-x-8">
+          <Link href={ERoutes.PUBLIC_ROOT}>
+            <TbPokeball size={35} />
+          </Link>
           {items.map((item) => (
             <Link href={item.pathName} legacyBehavior passHref key={item.name}>
               <NavigationMenuLink

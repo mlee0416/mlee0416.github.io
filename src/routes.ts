@@ -37,4 +37,4 @@ export const API_AUTH_PREFIX = ERoutes.AUTH_PREFIX;
  * @type {string}
  */
 
-export const DEFAULT_LOGIN_REDIRECT = ERoutes.SETTINGS;
+export const DEFAULT_LOGIN_REDIRECT = ERoutes.API_DEMO;

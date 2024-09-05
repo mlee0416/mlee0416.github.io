@@ -5,12 +5,12 @@ import { Separator } from "@/components/ui/separator";
 const socialMedia = [
   {
     name: "Personal Github",
-    icon: <FaGithub size={40} />,
+    icon: <FaGithub size={30} />,
     link: "https://github.com/mlee0416",
   },
   {
     name: "Professional Github",
-    icon: <FaGithub size={40} />,
+    icon: <FaGithub size={30} />,
     link: "https://github.com/mlee-YAPI",
   },
   {
@@ -27,8 +27,11 @@ const socialMedia = [
 
 const Footer = () => {
   return (
-    <div className="bg-white h-60 flex flex-row  items-center justify-center  gap-12">
-      <Separator />
+    <div
+      className="bg-white py-16 flex flex-row flex-wrap items-center justify-center gap-6"
+      id="contact"
+    >
+      <p className="font-semibold">Contact:</p>
       {socialMedia.map((item) => (
         <a
           href={item.link}
@@ -39,7 +42,6 @@ const Footer = () => {
           {item.icon} <p className="max-w-lg">{item.name}</p>
         </a>
       ))}
-      <Separator />
     </div>
   );
 };

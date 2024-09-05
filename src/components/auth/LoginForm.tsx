@@ -23,6 +23,7 @@ import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import { ERoutes } from "@/types/routes/routeTypes";
 import Link from "next/link";
+import { ThreeDots } from "react-loader-spinner";
 const LoginForm = () => {
   const [passwordType, setPasswordType] = useState<"password" | "text">(
     "password"
@@ -85,8 +86,8 @@ const LoginForm = () => {
     >
       <div className="pb-4 space-y-2">
         <p className="text-sm">
-          * If you do not want to log with an email, you are welcome to log in
-          using the information below.
+          *If you do not want to log in with an email address, you are welcome
+          to log in using the test address.
         </p>
         <p className="text-sm font-semibold">email: test@test.com</p>
         <p className="text-sm font-semibold">password: password</p>
