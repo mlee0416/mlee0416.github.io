@@ -114,7 +114,7 @@ const App = () => {
               Pokemon Trading Card Database
             </h1>
             <p>
-              Using ReactQuery to access TCG's database, you&apos;ll see a
+              Using ReactQuery to access TCG&apos;s database, you&apos;ll see a
               pokemon trading card application that allows users to search for
               pokemon cards and gather information about the selected card.
             </p>

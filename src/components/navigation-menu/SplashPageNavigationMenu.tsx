@@ -39,7 +39,7 @@ const components: IComponents[] = [
     title: "NFL Fantasy Football Toolkit",
     to: "nfl",
     description:
-      "Powered by Rapid API&apos;s, you can see NFL data to help navigate your way to success during the season.",
+      "Powered by Rapid API's, you can see NFL data to help navigate your way to success during the season.",
     disabled: true,
   },
 ];
