@@ -11,7 +11,7 @@ import {
 import authentication_img from "../../../public/static/authentication.jpg";
 import admin from "../../../public/static/admin.png";
 import settings from "../../../public/static/settings.png";
-import login from "../../../public/static/login.png";
+import login from "../../../public/static/login_img.png";
 import Image from "next/image";
 
 const IMAGES = [authentication_img, login, admin, settings];

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Footer from "./splash-page/Footer";
 import { SplashPageNavigationMenu } from "@/components/navigation-menu/SplashPageNavigationMenu";
-import login from "../../public/static/login.png";
+import login from "../../public/static/login_img.png";
 import { ERoutes } from "../types/routes/routeTypes";
 
 const App = () => {
