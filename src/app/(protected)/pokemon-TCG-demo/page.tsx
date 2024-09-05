@@ -9,7 +9,6 @@ const PokemonTCGDemo = () => {
   return (
     <>
       <Carousel slides={SLIDES} options={OPTIONS} />
-      test1
     </>
   );
 };
