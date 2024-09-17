@@ -18,6 +18,10 @@ export default async function ProtectedLayout({
       pathName: ERoutes.API_DEMO,
     },
     {
+      name: "NFL",
+      pathName: ERoutes.NFL_TOOLS,
+    },
+    {
       name: "Admin",
       pathName: ERoutes.ADMIN,
     },

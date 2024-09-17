@@ -43,7 +43,7 @@ const SideNav = ({ items }: ISideNavProps) => {
                   return (
                     <a href={item.pathName} target="_blank" key={item.name}>
                       <SheetHeader
-                        className="cursor-pointer h-12 hover:bg-gradient-to-t from-slate-100 to-emerald-400 hover:text-white rounded-lg items-center flex justify-center"
+                        className="cursor-pointer h-12 hover:bg-gradient-to-tr from-slate-200 to-slate-400 hover:text-white rounded-lg items-center flex justify-center"
                         onClick={closeSideNav}
                       >
                         {item.name}
@@ -58,7 +58,7 @@ const SideNav = ({ items }: ISideNavProps) => {
                       key={item.name}
                     >
                       <SheetHeader
-                        className="cursor-pointer h-12 hover:bg-gradient-to-t from-slate-100 to-emerald-400 hover:text-white rounded-lg items-center flex justify-center"
+                        className="cursor-pointer h-12 hover:bg-gradient-to-tr from-slate-200 to-slate-400 hover:text-white rounded-lg items-center flex justify-center"
                         onClick={closeSideNav}
                       >
                         {item.name}
