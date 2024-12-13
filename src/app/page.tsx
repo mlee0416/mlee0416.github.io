@@ -1,26 +1,63 @@
+"use client";
 import Image from "next/image";
 import coding2_img from "../../public/static/coding2_img.jpg";
 import coding_boy from "../../public/static/coding_boy.gif";
 import search_pokemon from "../../public/static/search_pokemon.png";
-import pokemon_card from "../../public/static/pokemon_card.png";
+import pm_1 from "../../public/static/pm1.png";
+import login from "../../public/static/login.png";
+import nfl_logo from "../../public/static/nfl-logo.png";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Footer from "./splash-page/Footer";
 import { SplashPageNavigationMenu } from "@/components/navigation-menu/SplashPageNavigationMenu";
-import login from "../../public/static/login_img.png";
 import { ERoutes } from "../types/routes/routeTypes";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 const App = () => {
-  const STACK = [
-    "NextJS",
-    "TypeScript",
-    "Tailwind",
-    "HTML",
-    "CSS",
-    "shadcn/ui",
-    "ReactQuery",
+  const PROJECT_CARD = [
+    {
+      name: "Project Management Dashboard",
+      description:
+        "This app allows users to create their own kanban board in order to organize their project.",
+      stack:
+        "Next.js, TypeScript, Tailwind, AWS EC2, AWS RDS, AWS Amplify, PostgresSQL, Prisma",
+      image: pm_1,
+      link: "https://main.d3ni3bkuab48xl.amplifyapp.com/home",
+      shouldPassHref: true,
+    },
+    {
+      name: "Login",
+      description:
+        "This project allows users to log into the application using a valid email and github. It allows 2 factor authentication as well as email verification after signing up. Once you are inside the app, you can change settings, password, and role.",
+      image: login,
+      stack: "Next.js, TypeScript, Tailwind, PostgresSQL, Prisma, Vercel",
+      link: "pokemon-TCG-demo/pokemon/cards?q=&page=1&pageSize=20",
+      shouldPassHref: false,
+    },
+    {
+      name: "Pokemon",
+      description:
+        "Using ReactQuery to access TCG's database, you'll see a pokemon trading card application that allows users to search for pokemon cards and gather information about the selected card.",
+      image: search_pokemon,
+      stack: "Next.js, TypeScript, Tailwind, PostgresSQL, Prisma, Vercel",
+      link: "/pokemon-TCG-demo/pokemon/cards?q=&page=1&pageSize=20",
+      shouldPassHref: false,
+    },
+    {
+      name: "NFL",
+      description:
+        "Small NFL app with latest statistics to help get updates during a football game.",
+      image: nfl_logo,
+      stack: "Next.js, TypeScript, Tailwind, PostgresSQL, Prisma, Vercel",
+      link: "/nfl-tools",
+      shouldPassHref: false,
+    },
   ];
-  const TOOLS = ["Vercel", "Resend", "Neon/Postgres", "Prisma"];
 
   return (
     <main>
@@ -36,9 +73,6 @@ const App = () => {
           <div className="text-center space-y-2">
             <p className="text-6xl">Hi, I&apos;m Michael</p>
             <p className="text-3xl">Senior Front-End Engineer</p>
-            <p className="text-3xl" id="about">
-              React | TypeScript | HTML | CSS
-            </p>
           </div>
         </div>
         <div className="grid gap-10 p-10 items-center bg-gradient-to-r from-cyan-500 to-blue-500">
@@ -79,64 +113,46 @@ const App = () => {
         >
           <h1 className="text-5xl font-semibold text-center">Projects</h1>
           <div className="text-center">
-            <p>This application is powered by:</p>
-            <p>NextJS | TypeScript | Tailwind | Prisma | Postgres</p>
-          </div>
-        </div>
-        <div className="grid grid-cols-1 tablet:grid-cols-2 gap-10 py-16 px-10  items-center justify-items-center bg-white">
-          <Link href={ERoutes.LOGIN}>
-            <Image
-              src={login}
-              alt="auth"
-              width={200}
-              height={300}
-              className="rounded-lg"
-            />
-          </Link>
-          <div className="flex flex-wrap space-y-6">
-            <h1 className="text-5xl font-semibold ">Login Authentication</h1>
             <p>
-              This project allows users to log into the application using a
-              valid email and github. It allows 2 factor authentication as well
-              as email verification after signing up. Once you are inside the
-              app, you can change settings, password, and role. Some other
-              technologies used are Prisma, Postgres, and Resend.
+              These projects highlight different aspects of my coding journey
+              from utilizing new front-end technologies like Tailwind, NextJS,
+              and ReactJS along with back-end services such as AWS.{" "}
             </p>
           </div>
         </div>
-        <div id="projects"></div>
-        <div
-          className="grid grid-cols-1 tablet:grid-cols-2 gap-10 py-16 px-10  items-center justify-items-center bg-gradient-to-r from-cyan-500 to-blue-500"
-          id="pokemon"
-        >
-          <div className="space-y-6">
-            <h1 className="text-5xl font-semibold">
-              Pokemon Trading Card Database
-            </h1>
-            <p>
-              Using ReactQuery to access TCG&apos;s database, you&apos;ll see a
-              pokemon trading card application that allows users to search for
-              pokemon cards and gather information about the selected card.
-            </p>
-          </div>
-          <Link href={ERoutes.LOGIN}>
-            <div className="grid grid-rows-2 items-center gap-4 ">
-              <Image
-                src={search_pokemon}
-                alt="gastly"
-                width={500}
-                height={500}
-                className="rounded-lg"
-              />
-              <Image
-                src={pokemon_card}
-                alt="gastly"
-                width={500}
-                height={500}
-                className="rounded-lg"
-              />
-            </div>
-          </Link>
+        <div className="flex gap-8 justify-around flex-wrap">
+          {PROJECT_CARD.map((card) => (
+            <Link
+              key={card.name}
+              href={card.link}
+              passHref={card.shouldPassHref}
+            >
+              <Card
+                className="w-[350px] h-[550px] flex justify-center"
+                key={card.name}
+              >
+                <CardHeader>
+                  <div className="flex justify-center items-center">
+                    <Image
+                      src={card.image}
+                      alt={card.name}
+                      height={300}
+                      className="rounded-lg object-contain h-[250px] w-[250px]"
+                    />
+                  </div>
+                  <CardTitle className="pt-4 pb-4">{card.name}</CardTitle>
+                  <CardDescription className="overflow-auto h-[130px]">
+                    {card.description}
+                  </CardDescription>
+                  {card.stack && (
+                    <CardDescription className="font-bold">
+                      Stack: {card.stack}
+                    </CardDescription>
+                  )}
+                </CardHeader>
+              </Card>
+            </Link>
+          ))}
         </div>
       </div>
       <Footer />
