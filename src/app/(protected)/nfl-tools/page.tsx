@@ -44,8 +44,8 @@ const NFLTools = () => {
   });
   console.log("nflTeamRoster", nflTeamRoster);
   return (
-    <div>
-      NFLTools{" "}
+    <div className="bg-black">
+      NFL Tools
       <p>
         This app is made to help provider information that can win you in your
         fantasy league. Powered by RAPID API, https://rapidapi.com/ we have

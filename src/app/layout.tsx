@@ -16,7 +16,10 @@ export default function RootLayout({ children }: any) {
   return (
     <html lang="en">
       <head>
-      <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet"/>
+        <link
+          href="https://fonts.cdnfonts.com/css/pokemon-solid"
+          rel="stylesheet"
+        />
       </head>
       <body className={`${inter.className} splashPage`}>
         <Provider>{children}</Provider>

@@ -81,11 +81,8 @@ body,
   }
 }
 
-.splashPage {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
+.backgroundImage {
+  background-image: url("../../public/static/bg-img.jpg");
 }
 
 @import url("https://fonts.cdnfonts.com/css/pokemon-solid");

@@ -22,6 +22,13 @@ export interface IComponents {
 }
 const components: IComponents[] = [
   {
+    title: "Project Management Dashboard",
+    to: "projects",
+    description:
+      "This app allows users to create their own kanban board in order to organize personal projects or tasks",
+    disabled: false,
+  },
+  {
     title: "Login Authentication",
     to: "login",
     description:
@@ -64,7 +71,7 @@ export function SplashPageNavigationMenu() {
     <div>
       <SplashPageSideNavMenu items={sideNav} />
       <NavigationMenu className="hidden tablet:block">
-        <NavigationMenuList>
+        <NavigationMenuList className="gap-4">
           <NavigationMenuItem className="cursor-pointer">
             <Link
               to="about"

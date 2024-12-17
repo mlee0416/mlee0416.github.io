@@ -29,7 +29,7 @@ const SplashPageSideNavMenu = ({ items }: ISideNavProps) => {
     <div className="block tablet:hidden">
       <Sheet open={openSideNav} onOpenChange={closeSideNav}>
         <SheetTrigger>
-          <RxHamburgerMenu />
+          <RxHamburgerMenu color="white" />
         </SheetTrigger>
         <SheetContent side="left" className="flex justify-between flex-col">
           <SheetHeader>
