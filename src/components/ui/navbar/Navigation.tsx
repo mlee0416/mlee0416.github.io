@@ -9,6 +9,7 @@ interface INavigationProps {
   navbarList: {
     name: string;
     pathName: ERoutes;
+    disabled: boolean;
   }[];
   displayUserButton?: boolean;
 }
