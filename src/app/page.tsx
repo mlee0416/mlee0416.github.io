@@ -105,7 +105,7 @@ const App = () => {
             {PROJECT_CARD.map((card) => (
               <Link
                 key={card.name}
-                href={!card.disabled ? "" : card.link}
+                href={card.disabled ? "" : card.link}
                 scroll={!card.disabled}
                 passHref={card.shouldPassHref}
                 className={`${card.disabled ? "pointer-events-none" : ""} `}

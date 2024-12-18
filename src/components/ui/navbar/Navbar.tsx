@@ -17,6 +17,7 @@ interface INavbarProps {
     name: string;
     pathName: string;
     newPage?: boolean;
+    disabled: boolean;
   }[];
 }
 
@@ -29,10 +30,17 @@ export const Navbar = ({ items }: INavbarProps) => {
             <TbPokeball size={35} />
           </Link>
           {items.map((item) => (
-            <Link href={item.pathName} legacyBehavior passHref key={item.name}>
+            <Link
+              legacyBehavior
+              passHref
+              key={item.name}
+              href={item.disabled ? "" : item.pathName}
+              scroll={!item.disabled}
+              className={`${item.disabled ? "pointer-events-none" : ""} `}
+            >
               <NavigationMenuLink
                 target={item.newPage ? "_blank" : undefined}
-                className={`${navigationMenuTriggerStyle()} hover:bg-gradient-to-tr from-slate-200 to-slate-400 hover:text-white`}
+                className={`${navigationMenuTriggerStyle()} `}
               >
                 {item.name}
               </NavigationMenuLink>

@@ -74,23 +74,13 @@ const Pokemon = ({
               </FormItem>
             )}
           />
-          {isLoading ? (
-            <Image
-              className="mt-10 rounded-full"
-              src={snorlax}
-              alt="snorlax"
-              width={200}
-              height={100}
+          <div className="grid gap-4">
+            <PokemonList pokemonList={pokemonList} />
+            <Pagination
+              totalCount={pokemonList?.totalCount}
+              page={pokemonList?.page}
             />
-          ) : (
-            <div className="grid gap-4">
-              <PokemonList pokemonList={pokemonList} />
-              <Pagination
-                totalCount={pokemonList?.totalCount}
-                page={pokemonList?.page}
-              />
-            </div>
-          )}
+          </div>
         </div>
       </form>
     </Form>

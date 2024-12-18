@@ -21,7 +21,7 @@ export const PROJECT_CARD = [
       "This project allows users to log into the application using a valid email and github. It allows 2 factor authentication as well as email verification after signing up. Once you are inside the app, you can change settings, password, and role.",
     image: login,
     stack: "Next.js, TypeScript, Tailwind, PostgresSQL, Prisma, Vercel",
-    link: "pokemon-TCG-demo/pokemon/cards?q=&page=1&pageSize=20",
+    link: "/auth/login",
     shouldPassHref: false,
     disabled: false,
   },

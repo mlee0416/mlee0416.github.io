@@ -29,24 +29,26 @@ const AdminPage = () => {
     });
   };
   return (
-    <Card className="md:w-[600px]">
-      <CardHeader>
-        <p className="text-2xl font-semibold text-center">Admin</p>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        <RoleGate allowedRole={UserRole.ADMIN}>
-          <FormSuccess message="You have access to this content" />
-        </RoleGate>
-        <div className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-md">
-          <p className="text-sm font-medium">Admin-only API Route</p>
-          <Button onClick={onApiRouteClick}>Click to test api</Button>
-        </div>
-        <div className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-md">
-          <p className="text-sm font-medium">Admin-only Server Action</p>
-          <Button onClick={onServerActionClick}>Click to test action</Button>
-        </div>
-      </CardContent>
-    </Card>
+    <div className="h-screen">
+      <Card className="tablet:w-[600px] h-96">
+        <CardHeader>
+          <p className="text-2xl font-semibold text-center">Admin</p>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <RoleGate allowedRole={UserRole.ADMIN}>
+            <FormSuccess message="You have access to this content" />
+          </RoleGate>
+          <div className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-md">
+            <p className="text-sm font-medium">Admin-only API Route</p>
+            <Button onClick={onApiRouteClick}>Click to test api</Button>
+          </div>
+          <div className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-md">
+            <p className="text-sm font-medium">Admin-only Server Action</p>
+            <Button onClick={onServerActionClick}>Click to test action</Button>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
   );
 };
 

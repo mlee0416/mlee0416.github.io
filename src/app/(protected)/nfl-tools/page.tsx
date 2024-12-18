@@ -44,7 +44,7 @@ const NFLTools = () => {
   });
   console.log("nflTeamRoster", nflTeamRoster);
   return (
-    <div className="bg-black">
+    <div>
       NFL Tools
       <p>
         This app is made to help provider information that can win you in your
