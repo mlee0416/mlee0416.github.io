@@ -34,7 +34,7 @@ const WorkExperience = () => {
             <TimelineDot
               color="primary"
               onClick={() => iconClick(0)}
-              className="cursor-pointer"
+              className="cursor-pointer hover:scale-125 hover:ease-in duration-300"
             >
               <FaTooth />
             </TimelineDot>
@@ -60,7 +60,7 @@ const WorkExperience = () => {
             <TimelineDot
               color="primary"
               onClick={() => iconClick(1)}
-              className="cursor-pointer"
+              className="cursor-pointer hover:scale-125 hover:ease-in duration-300"
             >
               <FaTooth />
             </TimelineDot>
@@ -86,7 +86,7 @@ const WorkExperience = () => {
             <TimelineDot
               color="primary"
               onClick={() => iconClick(2)}
-              className="cursor-pointer"
+              className="cursor-pointer hover:scale-125 hover:ease-in duration-300"
             >
               <FaTooth />
             </TimelineDot>
@@ -112,7 +112,7 @@ const WorkExperience = () => {
             <TimelineDot
               variant="outlined"
               onClick={() => iconClick(3)}
-              className="cursor-pointer"
+              className="cursor-pointer hover:scale-125 hover:ease-in duration-300"
             >
               <FaAd color="red" />
             </TimelineDot>
@@ -138,7 +138,7 @@ const WorkExperience = () => {
             <TimelineDot
               color="primary"
               variant="outlined"
-              className="cursor-pointer"
+              className="cursor-pointer hover:scale-125 hover:ease-in duration-300"
               onClick={() => iconClick(4)}
             >
               <FcCapacitor />

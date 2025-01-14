@@ -44,9 +44,7 @@ export default async function ProtectedLayout({
   return (
     <SessionProvider session={session}>
       <Navigation navbarList={NAVBAR_MENU_ITEMS} displayUserButton />
-      <div className="grid gap-8 p-8 backgroundImage  justify-center">
-        {children}
-      </div>
+      <div className="grid p-8  justify-center ">{children}</div>
     </SessionProvider>
   );
 }

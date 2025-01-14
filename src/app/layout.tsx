@@ -21,7 +21,7 @@ export default function RootLayout({ children }: any) {
           rel="stylesheet"
         />
       </head>
-      <body className={`${inter.className} splashPage`}>
+      <body className={`${inter.className} backgroundImage h-full`}>
         <Provider>{children}</Provider>
         <Toaster />
       </body>

@@ -9,7 +9,7 @@ const ExperienceCard = ({ cardNumber = 0 }: IExperienceCard) => {
   const description = work.description;
   if (experience) {
     return (
-      <Card className="w-full">
+      <Card className="tablet:w-[700px]">
         <CardHeader className="font-bold">{work.jobTitle}</CardHeader>
         <div className="pl-6 pb-6 pr-6">
           <h2 className="pb-4">{work.company}</h2>

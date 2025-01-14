@@ -16,7 +16,7 @@ interface IPokemonListProps {
 }
 const PokemonList = ({ pokemonList }: IPokemonListProps) => {
   return (
-    <div className="grid grid-cols-2 mobile:grid-cols-3 tablet:grid-cols-5 gap-4">
+    <div className="grid grid-cols-2 mobile:grid-cols-3 tablet:grid-cols-5 gap-4 h-auto">
       {pokemonList?.data?.map((pokemonCard) => (
         <Link
           key={pokemonCard.id}

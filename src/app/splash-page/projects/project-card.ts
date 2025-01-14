@@ -2,6 +2,7 @@ import search_pokemon from "../../../../public/static/search_pokemon.png";
 import pm_1 from "../../../../public/static/pm1.png";
 import login from "../../../../public/static/login.png";
 import nfl_logo from "../../../../public/static/nfl-logo.png";
+import itunes from "../../../../public/static/itunes.png";
 
 export const PROJECT_CARD = [
   {
@@ -12,6 +13,17 @@ export const PROJECT_CARD = [
       "Next.js, TypeScript, Tailwind, AWS EC2, AWS RDS, AWS Amplify, PostgresSQL, Prisma",
     image: pm_1,
     link: "https://main.d3ni3bkuab48xl.amplifyapp.com/home",
+    shouldPassHref: true,
+    disabled: false,
+  },
+
+  {
+    name: "iTunes Top Albums",
+    description:
+      "This project showcases utilizing REST Api provided by iTunes to display the top albums. There is an additional feature which allows userse to create a favorites list that is persisted.",
+    image: itunes,
+    stack: "React.js, TypeScript, Tailwind, Vercel",
+    link: "https://upwards-fe-challenge.vercel.app/",
     shouldPassHref: true,
     disabled: false,
   },
