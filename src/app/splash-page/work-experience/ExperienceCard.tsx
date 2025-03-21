@@ -1,4 +1,4 @@
-import { Card, CardDescription, CardHeader } from "@/components/ui/card";
+import { Card, CardHeader } from "@/components/ui/card";
 import React from "react";
 import experience from "./experience";
 interface IExperienceCard {
@@ -9,12 +9,11 @@ const ExperienceCard = ({ cardNumber = 0 }: IExperienceCard) => {
   const description = work.description;
   if (experience) {
     return (
-      <Card className="tablet:w-[700px]">
+      <Card className="desktop:w-[750px] w-full">
         <CardHeader className="font-bold">{work.jobTitle}</CardHeader>
         <div className="pl-6 pb-6 pr-6">
           <h2 className="pb-4">{work.company}</h2>
           <h2 className="pb-4 text-sm">{work.timeline}</h2>
-
           <ul className="display">
             {description.map((point) => (
               <li className="list-disc ml-4" key={point}>

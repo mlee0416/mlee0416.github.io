@@ -11,15 +11,40 @@ import { FaTooth } from "react-icons/fa6";
 import { FaAd } from "react-icons/fa";
 import { FcCapacitor } from "react-icons/fc";
 import ExperienceCard from "./ExperienceCard";
+
+interface ITimelineDot {
+  children: React.ReactNode;
+  iconNumber: number;
+  variant?: "filled" | "outlined";
+}
 const WorkExperience = () => {
   const [displayCard, setDisplayCard] = useState(0);
 
   const iconClick = (cardNumber: number) => {
     setDisplayCard(cardNumber);
   };
+
+  const LineDot = ({
+    children,
+    iconNumber,
+    variant = "outlined",
+  }: ITimelineDot) => {
+    return (
+      <TimelineDot
+        variant={variant}
+        color="primary"
+        onClick={() => iconClick(iconNumber)}
+        className={`cursor-pointer hover:scale-125 hover:ease-in duration-300 ${
+          displayCard === iconNumber && "motion-safe:animate-bounce"
+        }`}
+      >
+        {children}
+      </TimelineDot>
+    );
+  };
   return (
-    <div className="mt-20 flex flex-col tablet:flex-row gap-10">
-      <Timeline position="alternate" className="md:w-1/3">
+    <div className="mt-20 flex flex-col desktop:flex-row gap-10 items-center">
+      <Timeline position="alternate">
         <TimelineItem>
           <TimelineOppositeContent
             sx={{ m: "auto 0" }}
@@ -31,13 +56,9 @@ const WorkExperience = () => {
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
-            <TimelineDot
-              color="primary"
-              onClick={() => iconClick(0)}
-              className="cursor-pointer hover:scale-125 hover:ease-in duration-300"
-            >
+            <LineDot iconNumber={0} variant="filled">
               <FaTooth />
-            </TimelineDot>
+            </LineDot>
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent sx={{ py: "12px", px: 2 }}>
@@ -57,13 +78,9 @@ const WorkExperience = () => {
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
-            <TimelineDot
-              color="primary"
-              onClick={() => iconClick(1)}
-              className="cursor-pointer hover:scale-125 hover:ease-in duration-300"
-            >
+            <LineDot iconNumber={1} variant="filled">
               <FaTooth />
-            </TimelineDot>
+            </LineDot>
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent sx={{ py: "12px", px: 2 }}>
@@ -83,13 +100,9 @@ const WorkExperience = () => {
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
-            <TimelineDot
-              color="primary"
-              onClick={() => iconClick(2)}
-              className="cursor-pointer hover:scale-125 hover:ease-in duration-300"
-            >
+            <LineDot iconNumber={2} variant="filled">
               <FaTooth />
-            </TimelineDot>
+            </LineDot>
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent sx={{ py: "12px", px: 2 }}>
@@ -109,13 +122,9 @@ const WorkExperience = () => {
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
-            <TimelineDot
-              variant="outlined"
-              onClick={() => iconClick(3)}
-              className="cursor-pointer hover:scale-125 hover:ease-in duration-300"
-            >
+            <LineDot iconNumber={3}>
               <FaAd color="red" />
-            </TimelineDot>
+            </LineDot>
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent sx={{ py: "12px", px: 2 }}>
@@ -135,14 +144,9 @@ const WorkExperience = () => {
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
-            <TimelineDot
-              color="primary"
-              variant="outlined"
-              className="cursor-pointer hover:scale-125 hover:ease-in duration-300"
-              onClick={() => iconClick(4)}
-            >
+            <LineDot iconNumber={4}>
               <FcCapacitor />
-            </TimelineDot>
+            </LineDot>
             <TimelineConnector />
           </TimelineSeparator>
           <TimelineContent sx={{ py: "12px", px: 2 }}>
@@ -153,7 +157,7 @@ const WorkExperience = () => {
           </TimelineContent>
         </TimelineItem>
       </Timeline>
-      <div className="tablet:w-2/3 ">
+      <div className="desktop:w-2/3 w-full">
         <ExperienceCard cardNumber={displayCard} />
       </div>
     </div>

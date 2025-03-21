@@ -56,6 +56,10 @@ const sideNav = [
     pathName: "about",
   },
   {
+    name: "Work Experience",
+    pathName: "work_experience",
+  },
+  {
     name: "Projects",
     pathName: "projects",
     components: components,
@@ -82,6 +86,18 @@ export function SplashPageNavigationMenu() {
               className={navigationMenuTriggerStyle()}
             >
               About Me
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem className="cursor-pointer">
+            <Link
+              to="work_experience"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              className={navigationMenuTriggerStyle()}
+            >
+              Work Experience
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>

@@ -12,7 +12,11 @@ export const metadata = {
   description: "Personal App",
 };
 
-export default function RootLayout({ children }: any) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head>

@@ -73,7 +73,7 @@ const App = () => {
               height={300}
               className="rounded-xl"
             />
-            <p className="text-xl">
+            <p className="text-xl" id="work_experience">
               As a Senior Software Engineer, I have over 5 years of experience
               designing, developing, and deploying high-quality software
               solutions. I specialize in front-end development using modern
@@ -89,10 +89,8 @@ const App = () => {
           </ContentContainer>
         </SectionContainer>
         <SectionContainer>
-          <ContentContainer>
-            <Title title="Work Experience" id="work-experience" />
-            <WorkExperience />
-          </ContentContainer>
+          <Title title="Work Experience" id="work_experience" />
+          <WorkExperience />
         </SectionContainer>
         <SectionContainer>
           <Title title="Projects" id="projects" />
